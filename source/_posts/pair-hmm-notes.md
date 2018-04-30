@@ -19,6 +19,8 @@ categories: [生物信息,算法]
 3. HMM python实现
 4. pair HMM学习
 
+<!-- more -->
+
 [TOC]
 
 ## 1. EM算法复习

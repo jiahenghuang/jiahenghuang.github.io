@@ -26,6 +26,8 @@ categories:
    - 文章之间的分割线等
 5. 博客备份
 
+<!-- more -->
+
 # 1.github安装
 
 略。
@@ -65,6 +67,14 @@ $ hexo s #hexo server,用于启动本地服务器，预览网页
 ![config_set](hexo-github-notes\config_set.png)
 
 进阶配置，参考[**hexo+github搭建博客**](http://stevenshi.me/2017/05/07/hexo-blog/)
+
+- 会影响页内图片显示的站点地址配置，参见[hexo 报错 Cannot read property 'replace' of null](https://www.jianshu.com/p/449accb044b4)
+
+  ![微信截图_20180430215249](D:\share\work\codeSpace\git\LjessonS.github.io\source\_posts\hexo-github-notes\微信截图_20180430215249.png)
+
+  暂时不知道这个url有什么用，如果这个配置保持默认设置，是没问题的，但是一旦设置就一定要对，否则会报上面的错。
+
+  ​
 
 # 4.主题配置
 

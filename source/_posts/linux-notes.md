@@ -10,6 +10,10 @@ categories:
 
 # linux使用技巧
 
+记录一些有用有趣的技巧。
+
+<!-- more -->
+
 ## 1.添加别名（对git bash也适用）
 
 ```shell
