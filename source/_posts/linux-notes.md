@@ -12,7 +12,7 @@ category: linux
 ```shell
 $ alias #可通过该命令查看系统中变量别名
 $ vim ~/.bashrc #为常用工作路径添加别名，方便直接进入
-alias gss='cd /d/share/work/codeSpace/git/LjessonS.github.io/'
+alias gss='cd /d/share/work/codeSpace/git/LjessonS.github.io/source/_posts'
 alias ...='cd ..' #输入...直接能进入上层目录
 $ source ~/.bashrc #让别名生效
 ```
