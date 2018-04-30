@@ -1,8 +1,11 @@
 ---
 title: linux notes
 date: 2018-04-30 15:38:18
-tags: linux, notes
-categories: linux
+tags: 
+- linux
+- notes
+categories: 
+- linux
 ---
 
 # linux使用技巧

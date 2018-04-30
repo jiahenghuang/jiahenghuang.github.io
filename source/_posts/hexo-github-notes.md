@@ -1,8 +1,14 @@
 ---
 title: Hexo+Github pages搭建博客笔记
 date: 2018-4-30 15:02:58
-tags: hexo，blog，github, notes
-categories: hexo, github
+tags: 
+- hexo
+- blog
+- github
+- notes
+categories: 
+- hexo
+- github
 ---
 步骤：
 

@@ -1,8 +1,10 @@
 ---
 title: pair Hmm notes
 date: 2018-4-29 16:48:52
-tags: hmm, 生物信息
-categories: 生物信息，算法
+tags: 
+- hmm
+- 生物信息
+categories: [生物信息,算法]
 ---
 
 #pair Hmm学习笔记
