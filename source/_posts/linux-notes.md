@@ -2,7 +2,7 @@
 title: linux notes
 date: 2018-04-30 15:38:18
 tags: linux, notes
-category: linux
+categories: linux
 ---
 
 # linux使用技巧
