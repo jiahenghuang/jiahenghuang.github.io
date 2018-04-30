@@ -64,13 +64,13 @@ $ hexo s #hexo server,用于启动本地服务器，预览网页
 
 - 设置git仓库地址
 
-![config_set](hexo-github-notes\config_set.png)
+![config_set](hexo-github-notes/config_set.png)
 
 进阶配置，参考[**hexo+github搭建博客**](http://stevenshi.me/2017/05/07/hexo-blog/)
 
-- 会影响页内图片显示的站点地址配置，参见[hexo 报错 Cannot read property 'replace' of null](https://www.jianshu.com/p/449accb044b4)
+- 会影响页内图片显示的站点地址配置，另外图片的链接格式一定要是linux系统的**斜杠**，参见[hexo 报错 Cannot read property 'replace' of null](https://www.jianshu.com/p/449accb044b4)
 
-  ![微信截图_20180430215249](D:\share\work\codeSpace\git\LjessonS.github.io\source\_posts\hexo-github-notes\微信截图_20180430215249.png)
+  ![微信截图_20180430215249](hexo-github-notes/微信截图_20180430215249.png)
 
   暂时不知道这个url有什么用，如果这个配置保持默认设置，是没问题的，但是一旦设置就一定要对，否则会报上面的错。
 
@@ -78,9 +78,11 @@ $ hexo s #hexo server,用于启动本地服务器，预览网页
 
 # 4.主题配置
 
-安装[next主题](http://theme-next.iissnan.com/)，将默认的landscape修改为next
+安装[next主题](http://theme-next.iissnan.com/)，将默认的landscape修改为next，为什么选择nexT，看看[这个帖子](http://www.mdslq.cn/archives/9c1d5c6d.html)就明白了。
 
-![微信截图_20180430142912](hexo-github-notes\微信截图_20180430142912.png)
+![微信截图_20180430142912](hexo-github-notes/微信截图_20180430142912.png)
+
+访问量及阅读次数统计配置，参考[Hexo博客Next主题添加文章阅读量及网站访问信息](http://www.mdslq.cn/archives/d93ac7d.html)
 
 进阶配置，参考[**hexo+github搭建博客**](http://stevenshi.me/2017/05/07/hexo-blog/)
 
