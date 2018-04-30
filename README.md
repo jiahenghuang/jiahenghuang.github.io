@@ -6,19 +6,19 @@
 - npm install hexo-generator-search --save
 - npm install hexo-deployer-git --save
 
-## 1.Create a new note
+## 2.Create a new note
 - git pull
 - hexo new post "new blog"
 - hexo clean //clear old html file
 
-## 2.view in local
+## 3.view in local
 - hexo s -g
 
-## 3.add new blog sources
+## 4.add new blog sources
 - git add --all
 - git commit -m "add new blog"
 - git push origin hexo //push to remote branch hexo
 
-## 4.push to remote
+## 5.push to remote
 - hexo d -g
 
