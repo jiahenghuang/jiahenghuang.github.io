@@ -52,7 +52,7 @@ hexo.on('new', function(data){
 
 ![微信图片_20180430162139](linux-notes/微信图片_20180430162139.png)
 
-但是入股我们要编辑以前写的笔记该怎么打开呢。方法是将typora添加到windows系统变量中
+但是如果我们要编辑以前写的笔记该怎么打开呢。方法是将typora添加到windows系统变量中
 
 ```shell
 $ cd source/_posts
