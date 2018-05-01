@@ -128,6 +128,38 @@ hexo在github上部署的只是静态页面，并没有推送源文件，这样�
    - npm install hexo-server --save
    - npm install hexo-generator-search --save
    - npm install hexo-deployer-git --save
+   - npm install hexo-asset-image --save
+     - 注：需要设置站点配置文件`post_asset_folder: true`
+
+   或者直接用npm install, npm会自动安装package.json中的各个包。我在公司电脑上试的时候，发现npm install会报下图中的错。
+
+   ![微信截图_20180501221734](hexo-github-notes/微信截图_20180501221734.png)
+
+   这有可能是因为网络问题，安装不了包。需要使用cnpm命令安装
+
+   ```shell
+   $ npm i -g cnpm #安装cnpm
+   ```
+
+   然后我用`cnpm install`，甚至挨个安装，发现hexo还是不能识别
+
+   ![微信截图_20180501222341](hexo-github-notes/微信截图_20180501222341.png)
+
+   ![微信截图_20180501222352](hexo-github-notes/微信截图_20180501222352.png)
+
+   ![微信截图_20180501222818](hexo-github-notes/微信截图_20180501222818.png)
+
+   专业做前端的好心朋友让我试试全局安装，然后就成功了
+
+   ```shell
+   $ cnpm install -g hexo-cli
+   ```
+
+   ![微信截图_20180501223424](hexo-github-notes/微信截图_20180501223424.png)
+
+   我觉得npm install可以直接安装，用`cnpm install -g`直接全局安装也是可行的。然后hexo能用了，我在公司的电脑上也就能用博客了。
+
+   上面这个报错困扰了我一个上午，还是两个专业做前端的好心朋友教我的，在此衷心的感谢他们不吝赐教，真的很感谢你们！我很少向别人求助，经常一个问题卡很久，有时候会为自己浪费了太多时间感到后悔，这个问题要是没搞定，我可能会为这个问题纠结到明天无法安心上班T_T。
 
    然后可以开始新建并发布博客了
 
