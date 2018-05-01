@@ -45,13 +45,13 @@ rss:
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
-  #since: 2015
+  since: 2018
 
   # Icon between year and copyright info.
-  icon: user
+  icon: heart #user
 
   # If not defined, will be used `author` from Hexo main config.
-  copyright:
+  copyright: 
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
   powered: true
@@ -92,11 +92,11 @@ index_with_subtitle: false
 # Value before `||` delimeter is the target link.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
-  home: / || home
-  about: /about/ || user
-  tags: /tags/ || tags
-  categories: /categories/ || th
-  archives: /archives/ || archive
+  home: / #|| home
+  about: /about/ #|| user
+  tags: /tags/ #|| tags
+  categories: /categories/ #|| th
+  archives: /archives/ #|| archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
@@ -111,10 +111,10 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-#scheme: Muse
-#scheme: Mist
-scheme: Pisces
-#scheme: Gemini
+# scheme: Muse
+# scheme: Mist
+# scheme: Pisces
+scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -126,9 +126,10 @@ scheme: Pisces
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
-#social:
-  #GitHub: https://github.com/yourname || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
+social:
+  GitHub: https://github.com/LjessonS || github
+  zhihu: https://www.zhihu.com/
+  E-Mail: mailto:ltww2274@foxmail.com || envelope
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -144,14 +145,14 @@ social_icons:
   transition: false
 
 # Blog rolls
-links_icon: link
-links_title: 友情链接
-links_layout: block
-#links_layout: inline
-links:
-  hexo: https://hexo.io/zh-cn/docs
-  nexT: http://theme-next.iissnan.com/
-  Github: https://github.com/LjessonS
+# links_icon: link
+# links_title: 友情链接
+# links_layout: block
+# links_layout: inline
+# links:
+  # hexo: https://hexo.io/zh-cn/docs
+  # nexT: http://theme-next.iissnan.com/
+  # Github: https://github.com/LjessonS
   
 
 # Sidebar Avatar
@@ -177,7 +178,7 @@ toc:
 sidebar:
   # Sidebar Position, available value: left | right (only for Pisces | Gemini).
   position: left
-  #position: right
+  # position: right
 
   # Sidebar Display, available value (only for Muse | Mist):
   #  - post    expand on posts automatically. Default.
@@ -185,15 +186,15 @@ sidebar:
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  Totally remove sidebar including sidebar toggle.
   display: post
-  #display: always
-  #display: hide
+  # display: always
+  # display: hide
   #display: remove
 
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
   offset: 12
 
   # Back to top in sidebar (only for Pisces | Gemini).
-  b2t: false
+  b2t: true
 
   # Scroll percent label in b2t button.
   scrollpercent: false
@@ -232,8 +233,8 @@ post_meta:
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
   item_text: true
-  wordcount: false
-  min2read: false
+  wordcount: true
+  min2read: true
   totalcount: false
   separated_meta: true
 
@@ -272,14 +273,14 @@ android_chrome_color: "#222"
 #   enabled: [true/false] - Replace with specific image
 #   image: url-of-image   - Images's url
 custom_logo:
-  enabled: false
+  enabled: true
   image:
 
 # Code Highlight theme
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: night bright
+highlight_theme: night eighties
 
 
 # ---------------------------------------------------------------
@@ -533,9 +534,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: jaN0A0y6TTRaUve6RavFvbJY-gzGzoHsz
+  app_key: oijC1KG31hGf53zNczXI8xib
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
