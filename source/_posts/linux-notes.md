@@ -208,6 +208,17 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
 解决ubuntu bash中文乱码的问题:
 	http://nekomiao.me/2016/08/23/ubuntu-zh-CN/	
 
+查看linux是32位还是64位的（[五种方法检测你的 Linux 是32位还是64位](https://linux.cn/article-3048-1.html)）
+
+```shell
+$ uname -a #x86_64说明是64位
+#Linux gpudev_node1 4.4.0-121-generic #145-Ubuntu SMP Fri Apr 13 13:47:23 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+$ uname -m #直接输出
+#x86_64
+```
+
+
+
 ## 5.本地winscp+secureCRT连接虚拟机linux系统
 
 1. winscp直接下载不需要激活
@@ -238,6 +249,6 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
 
    - 永久修改背景色
 
-​		告诉你从哪里永久设置背景色：http://blog.sina.com.cn/s/blog_a0db295e0100wh2x.html
+			告诉你从哪里永久设置背景色：http://blog.sina.com.cn/s/blog_a0db295e0100wh2x.html
 		设置的颜色怎么舒服点：http://www.voidcn.com/article/p-rfuzpsmu-up.html
 
