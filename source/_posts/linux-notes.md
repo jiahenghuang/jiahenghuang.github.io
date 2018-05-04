@@ -80,10 +80,14 @@ $ unzip -o -d /home/sunny myfile.zip #把myfile.zip文件解压到 /home/sunny/
 -d:-d /home/sunny 指明将文件解压缩到/home/sunny目录下
 $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
 ```
-- 解压gz文件
+- gzip
 
   ```shell
-  $ gzip -dk FileName.gz #d表示解压，k表示保留输入文件
+  #解压缩：
+  $ gzip -dk xxx.fq.gz #d参数表示解压缩，k参数表示保留输入文件fq.gz压缩包，默认不保留输入文件。
+  #压缩：
+  $ gzip -fk xxx.fq #若先前有压缩过但没有压缩完成得到xxx.fq.gz文件，用f参数可以覆盖重新打包xxx.fq文件为xxx.fq.gz
+  #指定k参数是保留输入文件xxx.fq的意思，默认不保留输入文件。
   ```
 
 - nohup与&命令(http://blog.csdn.net/liuyanfeier/article/details/62422742)：
@@ -188,7 +192,62 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
   $ scp -r username@172.16.56.201:/home/ls/15B0048464_raw_1.fq.gz ./
   ```
 
-## 4.ubuntu 解决语言设置错误的问题
+- 文件合并（http://www.cnblogs.com/giraffe/p/3193085.html）
+
+  ```shell
+  #第二：两个文件合并
+  #一个文件在上，一个文件在下
+  $ cat file1 file2 > file3
+  #一个文件在左，一个文件在右
+  $ paste file1 file2 > file3
+  ```
+
+- grep
+
+  ```shell
+  grep ‘asb’ xxx.sam -A 5 #可以显示含有‘asb’所在行的后五行
+  ```
+
+- ln
+
+  ```shell
+  #注：虚拟机ubuntu与windows共享磁盘，软链接与硬链接都不可行。
+  $ ln source.sh destination.sh #默认硬链接
+  $ ln -s source.sh destination.sh #软链接
+  ```
+
+  - 硬链接与软链接区别
+    1. 硬链接实际是源文件建立一个别名，本质上是同一个文件；而软链接实际是创建了一个源文件的索引文件，和源文件是两个文件
+    2. 硬链接：删除源文件或目标文件，对另外一个链接源文件的文件不影响，即源文件内容不会删除，但是修改源文件或目标文件，所有其他链接源文件的文件内容也会随之改变。
+    3. 软链接：删除源文件，则软链接不可用，删除软链接文件，则不影响源文件。修改目标文件会影响源文件和硬链接一样，修改源文件也会影响目标文件。
+    4. 对硬链接和软链接目标文件所造成的修改，其他被源文件软链接和硬链接的文件也会被造成同样的修改。
+
+- scp
+
+  ```shell
+  #scp一次从远程传输多个文件（http://www.cnblogs.com/voidy/p/4215891.html）：
+  scp xxx@172.16.33.76:/home/xxx/test/\{CL100036475_L01_85.sort.dup.bam,CL100036475_L01_85.sort.dup.bam.bai\} .
+  ```
+
+- uniq: -d参数只显示重复行。http://os.51cto.com/art/200912/171332.htm
+
+- for循环查找重复行，了解SortSam排序机制：按染色体号和位置进行排序（sam文件的第3,4列），然后这两个列若相同则按源文件中顺序排序
+
+  ```shell
+  for i in (cat CL100036475_L01_85.sort.sam | awk '{print $4}'| uniq -d | head -33); do grep "i" CL100036475_L01_85.sort.sam; done
+  ```
+
+- 如何输出文本的非注释行：
+
+  ```shell
+  cat gatk.variation.vcf | grep -v "^#" | wc -l
+  ```
+
+  ​
+
+## 4.ubuntu使用中的一些问题
+
+### 4.1 解决语言设置错误的问题
 
 参考：（http://wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed）
 
@@ -216,6 +275,21 @@ $ uname -a #x86_64说明是64位
 $ uname -m #直接输出
 #x86_64
 ```
+
+### 4.2 notepadqq关闭异常
+
+参考:https://forum.manjaro.org/t/notepadqq-doesnt-save-preference/23867
+
+```shell
+#Error while trying to save this session. Please ensure the following directory is accessible:/home/user/.config/Notepadqq/tabCache
+#解决办法：
+$ sudo chown -R ls:ls $HOME/.config/Notepadqq
+$ chmod -R ug+rwx $HOME/.config/Notepadqq	
+```
+
+### 4.3 用UltraISO制作Ubuntu16.04 U盘启动盘
+
+参考：http://blog.csdn.net/yaoyut/article/details/78003061
 
 
 
@@ -251,4 +325,17 @@ $ uname -m #直接输出
 
 			告诉你从哪里永久设置背景色：http://blog.sina.com.cn/s/blog_a0db295e0100wh2x.html
 		设置的颜色怎么舒服点：http://www.voidcn.com/article/p-rfuzpsmu-up.html
+
+
+## 6. clion安装运行
+
+参考：http://www.voidcn.com/article/p-evedqfrg-kd.html
+
+```shell
+$ tar -zxvf CLion-2016.3.5.tar.gz#解压
+#进入bin目录,执行sh文件：
+$ ./clion.sh
+$ sudo notepadqq /etc/hosts##添加0.0.0.0 account.jetbrains.com进hosts文件
+#添加激活码：http://idea.lanyus.com/
+```
 

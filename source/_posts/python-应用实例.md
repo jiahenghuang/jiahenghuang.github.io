@@ -72,7 +72,7 @@ categories: [python]
    	 ['chr10', 'refSeq', 'CDS', '13337496', '13337606', '.', '-', '2', '6214'],
    	 ['chr10', 'refSeq', 'CDS', '13340187', '13340245', '.', '-', '0', '6214'],
    	 ['chr10', 'refSeq', 'CDS', '13341968', '13342042', '.', '-', '0', '6214']]
-   
+
    def myKey(tup): 
        mark = ''
        if  tup[6] == '-': 
@@ -81,6 +81,82 @@ categories: [python]
    refGene = sorted(a, key=myKey)
    ```
 
-   
+7. python3计算时间差、从字符串中匹配出时间信息
 
-   
+   ```python
+   import time
+   start = '2017-10-24 17:42:36'
+   end = '2017-10-24 17:43:36'
+   start_time_str = time.strptime(start, '%Y-%m-%d %H:%M:%S')
+   end_time_str = time.strptime(end, '%Y-%m-%d %H:%M:%S')
+   print(time.mktime(end_time_str) - time.mktime(start_time_str)) ##求时间差
+   str_ = 'INFO  INFO  2017-10-25 14:04:36 snp'
+   print(re.match(r".*([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2})", str_).group(1)) ##从字符串中匹配出时间信息:2017-10-25 14:04:36
+   ```
+
+8. 列表(list)元素取交集
+
+   ```python
+   dupPath = r'd:\dup.txt'
+   with open(dupPath) as f:
+   	dup = [line.split('\t')[0] for line in f]
+
+   strangeIntronPath = r'd:\refGene_v1_1.txt'
+   with open(strangeIntronPath) as f:
+   	strangeIntron = [line.split('\t')[0] for line in f]
+
+   set(dup) & set(strangeIntron)
+   ```
+
+9. 浅拷贝与深拷贝的用法
+
+   ```python
+   #浅拷贝
+   >>> a = {1:{1:2},2:3}
+   >>> b=a.copy()
+   >>> a.pop(1)
+   >>> a
+   {2: 3}
+   >>> b
+   {1: {1: 2}, 2: 3}
+
+   >>> a = {1:{1:2},2:3}
+   >>> b=a.copy()
+   >>> a[1].pop(1)
+   >>> a
+   {1: {}, 2: 3}
+   >>> b
+   {1: {}, 2: 3}
+   #深拷贝
+   >>> import copy
+   >>> a = {1:{1:{1:2},2:3},2:3}
+   >>> b=copy.deepcopy(a)
+   >>> a[1][1].pop(1)
+   >>> a
+   {1: {1: {}, 2: 3}, 2: 3}
+   >>> b
+   {1: {1: {1: 2}, 2: 3}, 2: 3}
+   ```
+
+10. python计数
+
+  ```python
+  try:
+      from collections import Counter
+  except ImportError:
+      from counter import Counter
+  d = Counter('simsalabim')
+  c = Counter('abcdeabcdabcaba')
+  c
+  #Counter({'a': 5, 'b': 4, 'c': 3, 'd': 2, 'e': 1})
+  c.update(d)
+  c['a']
+  #7
+  ```
+
+11. Eclipse美化中文字体：http://www.everycoding.com/coding/299.html
+
+   把eclipse放在这里是因为我的python ide用的就是eclipse+pydev.
+
+12. ​
+
