@@ -1,7 +1,7 @@
 ---
 title: 多个java版本如何共存于一个系统
 date: 2018-05-04 17:56:07
-tags: java, 环境变量
+tags: [java, 环境变量]
 categories: java
 ---
 
