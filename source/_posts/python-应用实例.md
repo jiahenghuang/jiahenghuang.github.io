@@ -5,8 +5,6 @@ tags: [python, 笔记]
 categories: [python]
 ---
 
-<!--more-->
-
 1. 如何从列表中随机抽取元素
 
    ```python
@@ -22,6 +20,8 @@ categories: [python]
 4. python远程调试：
     https://www.embeddedartists.com/sites/default/files/support/com/iMX_Developing_with_Python.pdf
     	http://o-u-u.com/?p=2015&pn=%E5%9C%A8eclipse%E4%B8%AD%E4%BD%BF%E7%94%A8pydev%E6%8F%92%E4%BB%B6%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95python&cat=%E9%A6%96%E9%A1%B5-2%2Feclipse
+
+    <!--more-->
 
 5. elipse调试快捷键：
     单步跳入:step into调试，进入语句中的子函数进行步进调试
