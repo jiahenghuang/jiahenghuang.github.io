@@ -5,6 +5,8 @@ tags: [python, 笔记]
 categories: [python]
 ---
 
+<!--more-->
+
 1. 如何从列表中随机抽取元素
 
    ```python
@@ -13,30 +15,30 @@ categories: [python]
    ```
 
 2. Anaconda3安装报错，failed to create anacoda menu，解决办法：
-   	http://blog.csdn.net/lixiangyong123/article/details/55816168	
+    http://blog.csdn.net/lixiangyong123/article/details/55816168	
 
 3. spyder复制上一行代码到下一行的快捷键：ctrl+alt+'向下的箭头'
 
 4. python远程调试：
-   	https://www.embeddedartists.com/sites/default/files/support/com/iMX_Developing_with_Python.pdf
-   	http://o-u-u.com/?p=2015&pn=%E5%9C%A8eclipse%E4%B8%AD%E4%BD%BF%E7%94%A8pydev%E6%8F%92%E4%BB%B6%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95python&cat=%E9%A6%96%E9%A1%B5-2%2Feclipse
+    https://www.embeddedartists.com/sites/default/files/support/com/iMX_Developing_with_Python.pdf
+    	http://o-u-u.com/?p=2015&pn=%E5%9C%A8eclipse%E4%B8%AD%E4%BD%BF%E7%94%A8pydev%E6%8F%92%E4%BB%B6%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95python&cat=%E9%A6%96%E9%A1%B5-2%2Feclipse
 
 5. elipse调试快捷键：
-   	单步跳入:step into调试，进入语句中的子函数进行步进调试
-   	单步跳过:step over调试，跳过该行语句，进入下一行进行调试
-   	单步返回:step out调试，跳出当前函数，进入调用源进行调试
-   	全局 单步返回 F7 
-   	全局 单步跳过 F6 
-   	全局 单步跳入 F5 
-   	全局 单步跳入选择 Ctrl+F5 
-   	全局 调试上次启动 F11 
-   	全局 继续 F8 
-   	全局 使用过滤器单步执行 Shift+F5 
-   	全局 添加/去除断点 Ctrl+Shift+B 
-   	全局 显示 Ctrl+D 
-   	全局 运行上次启动 Ctrl+F11 
-   	全局 运行至行 Ctrl+R 
-   	全局 执行 Ctrl+U
+    单步跳入:step into调试，进入语句中的子函数进行步进调试
+    	单步跳过:step over调试，跳过该行语句，进入下一行进行调试
+    	单步返回:step out调试，跳出当前函数，进入调用源进行调试
+    	全局 单步返回 F7 
+    	全局 单步跳过 F6 
+    	全局 单步跳入 F5 
+    	全局 单步跳入选择 Ctrl+F5 
+    	全局 调试上次启动 F11 
+    	全局 继续 F8 
+    	全局 使用过滤器单步执行 Shift+F5 
+    	全局 添加/去除断点 Ctrl+Shift+B 
+    	全局 显示 Ctrl+D 
+    	全局 运行上次启动 Ctrl+F11 
+    	全局 运行至行 Ctrl+R 
+    	全局 执行 Ctrl+U
 
 6. python3 sorted 多属性排序技巧
 
@@ -72,7 +74,7 @@ categories: [python]
    	 ['chr10', 'refSeq', 'CDS', '13337496', '13337606', '.', '-', '2', '6214'],
    	 ['chr10', 'refSeq', 'CDS', '13340187', '13340245', '.', '-', '0', '6214'],
    	 ['chr10', 'refSeq', 'CDS', '13341968', '13342042', '.', '-', '0', '6214']]
-
+   
    def myKey(tup): 
        mark = ''
        if  tup[6] == '-': 
@@ -100,11 +102,11 @@ categories: [python]
    dupPath = r'd:\dup.txt'
    with open(dupPath) as f:
    	dup = [line.split('\t')[0] for line in f]
-
+   
    strangeIntronPath = r'd:\refGene_v1_1.txt'
    with open(strangeIntronPath) as f:
    	strangeIntron = [line.split('\t')[0] for line in f]
-
+   
    set(dup) & set(strangeIntron)
    ```
 
@@ -119,7 +121,7 @@ categories: [python]
    {2: 3}
    >>> b
    {1: {1: 2}, 2: 3}
-
+   
    >>> a = {1:{1:2},2:3}
    >>> b=a.copy()
    >>> a[1].pop(1)

@@ -33,6 +33,8 @@ categories: latex
    $$
 
 
+<!--more-->
+
 参考链接:
 
 1. [常用数学符号的 LaTeX 表示方法](http://wdxtub.com/2016/03/26/latex-notation-table/)
