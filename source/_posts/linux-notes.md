@@ -206,6 +206,7 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
 
   ```shell
   grep ‘asb’ xxx.sam -A 5 #可以显示含有‘asb’所在行的后五行
+  #输出文本的非注释行：cat gatk.variation.vcf | grep -v "^#" | wc -l
   ```
 
 - ln
@@ -236,14 +237,8 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
   ```shell
   for i in (cat CL100036475_L01_85.sort.sam | awk '{print $4}'| uniq -d | head -33); do grep "i" CL100036475_L01_85.sort.sam; done
   ```
-
-- 如何输出文本的非注释行：
-
-  ```shell
-  cat gatk.variation.vcf | grep -v "^#" | wc -l
-  ```
-
   ​
+
 
 ## 4.ubuntu使用中的一些问题
 
@@ -327,7 +322,7 @@ $ chmod -R ug+rwx $HOME/.config/Notepadqq
 		设置的颜色怎么舒服点：http://www.voidcn.com/article/p-rfuzpsmu-up.html
 
 
-## 6. clion安装运行
+## 6. clion安装与卸载
 
 参考：http://www.voidcn.com/article/p-evedqfrg-kd.html
 
@@ -338,4 +333,9 @@ $ ./clion.sh
 $ sudo notepadqq /etc/hosts##添加0.0.0.0 account.jetbrains.com进hosts文件
 #添加激活码：http://idea.lanyus.com/
 ```
+
+**卸载**
+
+> Delete the installation directory
+> Delete the "config" and "system" configuration directories. These contain IntelliJ IDEA's caches, configuration and plugins.`（~/.<PRODUCT><VERSION>）`
 
