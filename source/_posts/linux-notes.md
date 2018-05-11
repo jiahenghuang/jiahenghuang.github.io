@@ -237,6 +237,21 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
   ```shell
   for i in (cat CL100036475_L01_85.sort.sam | awk '{print $4}'| uniq -d | head -33); do grep "i" CL100036475_L01_85.sort.sam; done
   ```
+
+- for循环批量生成脚本挂起
+
+  ```shell
+  $ cat tmp.sh
+  	test1.sh
+  	test2.sh
+  	test3.sh
+  $ for i in `cat tmp.sh`;do echo  "sh $i 1 > $i.info 2 > $i.err &" > tmp1.sh; done
+  $ cat tmp1.sh
+  	sh test1.sh 1 > test1.sh.info 2 > test1.sh.err &
+  	sh test2.sh 1 > test2.sh.info 2 > test2.sh.err &
+  	sh test3.sh 1 > test3.sh.info 2 > test3.sh.err &
+  ```
+
   ​
 
 
@@ -285,6 +300,20 @@ $ chmod -R ug+rwx $HOME/.config/Notepadqq
 ### 4.3 用UltraISO制作Ubuntu16.04 U盘启动盘
 
 参考：http://blog.csdn.net/yaoyut/article/details/78003061
+
+### 4.4 ubuntu虚拟机卸载搜狗输入法
+
+```shell
+$sudo dpkg  -l  so*  就可以找到sogoupinyin  
+$sudo apt-get  purge  sogoupinyin  (为防止登陆不了桌面sudo dpkg -r sogoupinyin暂不支持使用)
+#桌面右上角  开关机按钮  进入  系统设置 
+#重新设置ibus为系统默认输入方式
+	点击  语言支持      键盘输入方式系统  选择IBus
+$sudo apt-get purge  fcitx
+#彻底卸载fcitx及相关配置
+$sudo apt-get autoremove
+注销系统用户
+```
 
 
 
