@@ -53,4 +53,11 @@ git的常用命令
    git push #提交自己的更新
    ```
 
-   ​
+7. git push免密登陆
+
+   ```shell
+   #如果已经使用https协议克隆了，那么按照如下方法更改协议： 
+   git remote set-url origin git@github.com:yourusername/yourrepositoryname.git
+   ```
+
+   参考：[git push 免密码](https://bryceyang.github.io/blog/2017/05/25/Tips/#heading-git-push-%E5%85%8D%E5%AF%86%E7%A0%[81)、[杨凯的回答](https://www.zhihu.com/question/31836445)
