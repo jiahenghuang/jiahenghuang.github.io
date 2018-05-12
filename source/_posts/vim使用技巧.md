@@ -14,4 +14,11 @@ categories: vim
    /\<main\>
    ```
 
+2. vim查找替换,这个命令会将文内所有foo替换为bar
+
+   ```shell
+   :%s/foo/bar/g #在普通模式中输入
+   ```
+
    ​
+

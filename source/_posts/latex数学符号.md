@@ -33,10 +33,27 @@ categories: latex
    $$
 
 
+
+   参考链接:
+
+   1. [常用数学符号的 LaTeX 表示方法](http://wdxtub.com/2016/03/26/latex-notation-table/)
+   2. [Latex 常用符号表](http://wulc.me/2016/09/18/%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7%E7%9A%84%20LaTeX%20%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95/)
+
 <!--more-->
 
-参考链接:
+2. 公式编号
 
-1. [常用数学符号的 LaTeX 表示方法](http://wdxtub.com/2016/03/26/latex-notation-table/)
-2. [Latex 常用符号表](http://wulc.me/2016/09/18/%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7%E7%9A%84%20LaTeX%20%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95/)
+   - 手动编号
+
+   ```latex
+   $$x^n+y^n=z^n \tag{1.1}$$
+   ```
+
+   **显示效果**
+
+   $$x^n+y^n=z^n \tag{1.1}$$
+
+   - 或者使用Typora偏好设置中的自动编号（不方便维护，不推荐）
+
+   参考：https://www.zybuluo.com/fyywy520/note/82980
 
