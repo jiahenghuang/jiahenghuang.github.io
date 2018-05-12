@@ -107,7 +107,7 @@ $$
 >
 > $\alpha_j(T)=b_j(y_T)\sum_{i=1}^Ka_{i,j}\alpha_i(T-1)=p(y_1,y_2,...,y_T,q_T=j)$
 >
-> $p(y_1,y_2,...,y_T)=\sum_{i=1}^{K}\alpha_j(T)$
+> $p(y_1,y_2,...,y_T)=\sum_{j=1}^{K}\alpha_j(T)$
 
 #### 2.2.2 backward algorithm
 
