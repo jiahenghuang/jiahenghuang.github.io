@@ -62,8 +62,8 @@ $$x^n+y^n=z^n \tag{1.1}$$
 
   ```latex
   \begin{matrix}
-     1 & 2 & 3 \\
-     4 & 5 & 6 \\
+     1 & 2 & 3 \\\
+     4 & 5 & 6 \\\
      7 & 8 & 9
   \end{matrix} \tag{1}
   ```
@@ -71,8 +71,8 @@ $$x^n+y^n=z^n \tag{1.1}$$
   **显示效果**
   $$
   \begin{matrix}
-     1 & 2 & 3 \\
-     4 & 5 & 6 \\
+     1 & 2 & 3 \\\
+     4 & 5 & 6 \\\
      7 & 8 & 9
     \end{matrix} \tag{1}
   $$
@@ -82,21 +82,21 @@ $$x^n+y^n=z^n \tag{1.1}$$
   **语法**
 
   ```latex
-  \left\{
+  \left{
   \begin{matrix}
-     1 & 2 & 3 \\
-     4 & 5 & 6 \\
+     1 & 2 & 3 \\\
+     4 & 5 & 6 \\\
      7 & 8 & 9
   \end{matrix}
-  \right\} \tag{2}
+  \right} \tag{2}
   ```
 
   **显示效果**
   $$
   \left\{
   \begin{matrix}
-     1 & 2 & 3 \\
-     4 & 5 & 6 \\
+     1 & 2 & 3 \\\
+     4 & 5 & 6 \\\
      7 & 8 & 9
   \end{matrix}
   \right\} \tag{2}
@@ -108,17 +108,17 @@ $$x^n+y^n=z^n \tag{1.1}$$
 
   ```latex
   \begin{bmatrix}
-     1 & 2 & 3 \\
-     4 & 5 & 6 \\
+     1 & 2 & 3 \\\
+     4 & 5 & 6 \\\
      7 & 8 & 9
-  \end{bmatrix} \tag{4}
+  \end{bmatrix} \tag{3}
   ```
 
   **显示效果**
   $$
   \begin{bmatrix}
-     1 & 2 & 3 \\
-     4 & 5 & 6 \\
+     1 & 2 & 3 \\\
+     4 & 5 & 6 \\\
      7 & 8 & 9
   \end{bmatrix} \tag{3}
   $$
@@ -130,10 +130,10 @@ $$x^n+y^n=z^n \tag{1.1}$$
   ```latex
   \left[
   \begin{matrix}
-   1      & 2      & \cdots & 4      \\
-   7      & 6      & \cdots & 5      \\
-   \vdots & \vdots & \ddots & \vdots \\
-   8      & 9      & \cdots & 0      \\
+   1      & 2      & \cdots & 4      \\\
+   7      & 6      & \cdots & 5      \\\
+   \vdots & \vdots & \ddots & \vdots \\\
+   8      & 9      & \cdots & 0      \\\
   \end{matrix}
   \right]
   ```
@@ -142,10 +142,10 @@ $$x^n+y^n=z^n \tag{1.1}$$
   $$
   \left[
   \begin{matrix}
-   1      & 2      & \cdots & 4      \\
-   7      & 6      & \cdots & 5      \\
-   \vdots & \vdots & \ddots & \vdots \\
-   8      & 9      & \cdots & 0      \\
+   1      & 2      & \cdots & 4      \\\
+   7      & 6      & \cdots & 5      \\\
+   \vdots & \vdots & \ddots & \vdots \\\
+   8      & 9      & \cdots & 0      \\\
   \end{matrix}
   \right]
   $$
