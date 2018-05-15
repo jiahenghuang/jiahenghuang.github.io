@@ -5,33 +5,30 @@ tags: [latex, 数学符号]
 categories: latex
 ---
 
-## 排版
+## 1.公式左对齐
 
-1. 公式左对齐
+```latex
+\begin{align}
+& \widehat{q_i} = qual \\\
+& q = globalDeltaQEmpirical \\\
+& \bar{\widehat{q}} = aggregrateQReported \\\
+& q_i = deltaQReportedEmpirical \\\
+&q_{i0} = deltaQCovariateEmpirical_0, covariatedName = context \\\
+& q_{i1} = deltaQCovariateEmpirical_1, covariatedName = cycle
+\end{align}
+```
 
-   ```latex
-   \begin{align}
-   & \widehat{q_i} = qual \\\
-   & q = globalDeltaQEmpirical \\\
-   & \bar{\widehat{q}} = aggregrateQReported \\\
-   & q_i = deltaQReportedEmpirical \\\
-   &q_{i0} = deltaQCovariateEmpirical_0, covariatedName = context \\\
-   & q_{i1} = deltaQCovariateEmpirical_1, covariatedName = cycle
-   \end{align}
-   ```
-
-   显示效果如下:
-   $$
-   \begin{align}
-   & \widehat{q_i} = qual \\\
-   & q = globalDeltaQEmpirical \\\
-   & \bar{\widehat{q}} = aggregrateQReported \\\
-   & q_i = deltaQReportedEmpirical \\\
-   &q_{i0} = deltaQCovariateEmpirical_0, covariatedName = context \\\
-   & q_{i1} = deltaQCovariateEmpirical_1, covariatedName = cycle
-   \end{align}
-   $$
-
+显示效果如下:
+$$
+\begin{align}
+& \widehat{q_i} = qual \\\
+& q = globalDeltaQEmpirical \\\
+& \bar{\widehat{q}} = aggregrateQReported \\\
+& q_i = deltaQReportedEmpirical \\\
+&q_{i0} = deltaQCovariateEmpirical_0, covariatedName = context \\\
+& q_{i1} = deltaQCovariateEmpirical_1, covariatedName = cycle
+\end{align}
+$$
 
 
    参考链接:
@@ -41,19 +38,126 @@ categories: latex
 
 <!--more-->
 
-2. 公式编号
+## 2. 公式编号
 
-   - 手动编号
+- 手动编号
 
-   ```latex
-   $$x^n+y^n=z^n \tag{1.1}$$
-   ```
+```latex
+$$x^n+y^n=z^n \tag{1.1}$$
+```
 
-   **显示效果**
+**显示效果**
 
-   $$x^n+y^n=z^n \tag{1.1}$$
+$$x^n+y^n=z^n \tag{1.1}$$
 
-   - 或者使用Typora偏好设置中的自动编号（不方便维护，不推荐）
+- 或者使用Typora偏好设置中的自动编号（不方便维护，不推荐）
 
-   参考：https://www.zybuluo.com/fyywy520/note/82980
+参考：https://www.zybuluo.com/fyywy520/note/82980
+
+## 3. 矩阵
+
+- 不带括号的矩阵
+
+  **语法**
+
+  ```latex
+  \begin{matrix}
+     1 & 2 & 3 \\\
+     4 & 5 & 6 \\\
+     7 & 8 & 9
+  \end{matrix} \tag{1}
+  ```
+
+  **显示效果**
+  $$
+  \begin{matrix}
+     1 & 2 & 3 \\\
+     4 & 5 & 6 \\\
+     7 & 8 & 9
+    \end{matrix} \tag{1}
+  $$
+
+- 带括号的矩阵
+
+  **语法**
+
+  ```latex
+  \left{
+  \begin{matrix}
+     1 & 2 & 3 \\\
+     4 & 5 & 6 \\\
+     7 & 8 & 9
+  \end{matrix}
+  \right} \tag{2}
+  ```
+
+  **显示效果**
+  $$
+  \left\{
+  \begin{matrix}
+     1 & 2 & 3 \\\
+     4 & 5 & 6 \\\
+     7 & 8 & 9
+  \end{matrix}
+  \right\} \tag{2}
+  $$
+
+- 带方括号的矩阵
+
+  **语法**
+
+  ```latex
+  \begin{bmatrix}
+     1 & 2 & 3 \\\
+     4 & 5 & 6 \\\
+     7 & 8 & 9
+  \end{bmatrix} \tag{3}
+  ```
+
+  **显示效果**
+  $$
+  \begin{bmatrix}
+     1 & 2 & 3 \\\
+     4 & 5 & 6 \\\
+     7 & 8 & 9
+  \end{bmatrix} \tag{3}
+  $$
+
+- 带省略符号的矩阵
+
+  **语法**
+
+  ```latex
+  \left[
+  \begin{matrix}
+   1      & 2      & \cdots & 4      \\\
+   7      & 6      & \cdots & 5      \\\
+   \vdots & \vdots & \ddots & \vdots \\\
+   8      & 9      & \cdots & 0      \\\
+  \end{matrix}
+  \right]
+  ```
+
+  **显示效果**
+  $$
+  \left[
+  \begin{matrix}
+   1      & 2      & \cdots & 4      \\\
+   7      & 6      & \cdots & 5      \\\
+   \vdots & \vdots & \ddots & \vdots \\\
+   8      & 9      & \cdots & 0      \\\
+  \end{matrix}
+  \right]
+  $$
+  
+
+参考：[使用LaTeX写矩阵 ](https://blog.csdn.net/bendanban/article/details/44221279)
+
+
+
+
+
+
+
+
 
