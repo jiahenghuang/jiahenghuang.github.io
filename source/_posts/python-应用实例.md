@@ -160,5 +160,76 @@ categories: [python]
 
    把eclipse放在这里是因为我的python ide用的就是eclipse+pydev.
 
-12. ​
+12. python统计程序执行时间
 
+   > 在 Unix 系统中，建议使用 time.time()，在 Windows 系统中，建议使用 time.clock()
+   > if sys.platform == "win32":
+   >
+   > On Windows, the best timer is time.clock()
+   >
+   > default_timer = time.clock
+   > else:
+   >
+   > On most other platforms the best timer is time.time()
+   >
+   > default_timer = time.time
+   > 使用 timeit 代替 time，这样就可以实现跨平台的精度性：
+   >
+   > start = timeit.default_timer()
+   > ... do something
+   > elapsed = (timeit.default_timer() - start)
+
+   ```python
+   import timeit
+
+   def timeTest():
+       start = timeit.default_timer()
+       print("Start: " + str(start))
+       for i in range(1, 100000000):
+           pass
+       stop = timeit.default_timer()
+       print("Stop: " + str(stop))
+       print(str(stop-start) + "秒")
+
+   def main():
+       timeTest()
+
+   if __name__=='__main__':
+       main()
+   ```
+
+
+参考：[[python计算程序运行时间](http://www.cnblogs.com/youxin/p/3157099.html)](https://www.cnblogs.com/youxin/p/3157099.html)
+
+13. python无穷大的表示
+
+    ```python
+    >>> a = float('inf') #正无穷大
+    >>> b = float('-inf') #负无穷大
+    >>> c = float('nan')  #未定义的数字
+    >>> a
+    inf
+    >>> b
+    -inf
+    >>> c
+    nan
+    >>> a > 3
+    True
+    >>> a < 3
+    False
+    >>> b < -9999
+    True
+    ```
+
+    参考: [无穷大与NaN](http://python3-cookbook.readthedocs.io/zh_CN/latest/c03/p07_infinity_and_nan.html)
+
+14. python调用外部程序
+
+    ```python
+    #使用os模块调用ls命令
+    >>> import os
+    >>> os.system('ls')
+    1.txt            baqtools.cpp             bgitools.cpp       exc.e.bak  globalb.cpp                    grptools.hpp [...]
+    ```
+
+    ​
