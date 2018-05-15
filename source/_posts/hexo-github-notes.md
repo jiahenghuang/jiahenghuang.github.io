@@ -101,9 +101,10 @@ hexo在github上部署的只是静态页面，并没有推送源文件，这样�
        .DS_Store
        Thumbs.db
        *.log
-       node_modules/
-       public/
+       node_modules/ #安装包的目录，在执行npm install的时候会重新生成，不需要拷贝
+       public/ #生成的静态网页，不需要拷贝
        .deploy*/
+       db.json
    $ git status #查看目前的提交状态
    $ git add --all
    $ git commit -m "backup source file" #提交博客源文件
