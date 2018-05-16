@@ -86,6 +86,8 @@ public static void method1(String file, String conent) {
     }
 ```
 
+<!--more-->
+
 参考:[java 追加内容到文件末尾的几种常用方法](https://blog.csdn.net/jsjwk/article/details/3942167)
 
 2. Intelij java工程打成可执行jar包
@@ -107,3 +109,5 @@ public static void method1(String file, String conent) {
 - 完成后，点击OK，Apply等按钮，回到IDEA的主菜单，选择“Build - Build Artifacts”下的“Build”或者“Rebuild”即可生成最终的可运行的jar，在D:\VM_Share\work\bin\intelij\gatk-protected\out\artifacts\gatk_aggregator_public_jar下面找到生成的目标jar，可以看到META-INF/MAINFEST.MF文件被正确包含，内容也正确（含有main class）。
 
   ![微信截图_20180516141749](java笔记/微信截图_20180516141749.png)
+
+参考:[使用Intellij Idea打包java为可执行jar包](https://blog.csdn.net/xuemengrui12/article/details/74984731)

@@ -315,6 +315,20 @@ $sudo apt-get autoremove
 注销系统用户
 ```
 
+### 4.5 ubuntu kylin16.04 设置任务栏位置
+
+```shell
+#该命令可能不适用其他版本
+#设置在底部
+gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+#设置在左侧
+gsettings set com.canonical.Unity.Launcher launcher-position Left
+```
+
+![微信截图_20180516164937](linux-notes/微信截图_20180516164937.png)
+
+参考:[Ubuntu 16.04 设置菜单栏位置](https://blog.csdn.net/u011642663/article/details/73556095)
+
 
 
 ## 5.本地winscp+secureCRT连接虚拟机linux系统
