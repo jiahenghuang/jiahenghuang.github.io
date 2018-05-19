@@ -382,3 +382,28 @@ $ sudo notepadqq /etc/hosts##添加0.0.0.0 account.jetbrains.com进hosts文件
 > Delete the installation directory
 > Delete the "config" and "system" configuration directories. These contain IntelliJ IDEA's caches, configuration and plugins.`（~/.<PRODUCT><VERSION>）`
 
+- c/c++工程环境配置
+
+  ```shell
+  #cmake安装
+  sudo apt-get install cmake
+  #g++环境
+  sudo apt-get install g++
+  #fatal error: bzlib.h: No such file or directory 问题
+  sudo apt-get install libboost-all-dev
+  sudo apt-get install libbz2-dev
+  #fatal error: zlib.h & lzma.h : No such file or directory
+  sudo apt-get install liblzma-dev
+  ```
+
+  参考：
+
+  [g++: command not found的解决 ](https://blog.csdn.net/h378588270/article/details/7729268)
+
+  [ubuntu安装CMake的几种方式 ](https://blog.csdn.net/lj402159806/article/details/76408597)
+
+  [解决 Boost安装：fatal error: bzlib.h: No such file or directory 问题](https://www.cnblogs.com/qq952693358/p/8563048.html)
+
+  [fatal error: zlib.h & lzma.h : No such file or directory ](https://blog.csdn.net/digent1/article/details/9467739)
+
+  
