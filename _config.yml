@@ -25,6 +25,13 @@ permalink_defaults:
 search:
  path: search.xml
  field: post
+ format: html
+ limit: 10000
+ 
+algolia:
+  applicationID: 'D7YTVFEYAL'
+  indexName: 'hexo_NAME'
+  chunkSize: 5000
  
 # Directory
 source_dir: source

@@ -84,6 +84,8 @@ $ hexo s #hexo server,用于启动本地服务器，预览网页
 
 访问量及阅读次数统计配置，参考[Hexo博客Next主题添加文章阅读量及网站访问信息](http://www.mdslq.cn/archives/d93ac7d.html)
 
+添加搜索功能，参考[Hexo博客添加搜索功能](http://www.itfanr.cc/2017/10/27/add-search-function-to-hexo-blog/)
+
 进阶配置，参考[**hexo+github搭建博客**](http://stevenshi.me/2017/05/07/hexo-blog/)
 
 # 5.博客备份
@@ -101,10 +103,9 @@ hexo在github上部署的只是静态页面，并没有推送源文件，这样�
        .DS_Store
        Thumbs.db
        *.log
-       node_modules/ #安装包的目录，在执行npm install的时候会重新生成，不需要拷贝
-       public/ #生成的静态网页，不需要拷贝
+       node_modules/
+       public/
        .deploy*/
-       db.json
    $ git status #查看目前的提交状态
    $ git add --all
    $ git commit -m "backup source file" #提交博客源文件
