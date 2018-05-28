@@ -45,7 +45,40 @@ it.operator*().second.size();
   > b main.cpp:281
   ```
 
-  ​
 
+### 4.将c中的char数组转换为整数类型
+
+```c
+char myarray[5] = {'-', '1', '2', '3', '\0'};
+int i;
+sscanf(myarray, "%d", &i);
+```
+
+参考：[Convert char array to a int number in C](https://stackoverflow.com/questions/10204471/convert-char-array-to-a-int-number-in-c?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+
+### 5.实现c++ vector的二分查找
+
+```c++
+bool binary_search(const vector<string>& sorted_vec, string key) {
+    size_t mid, left = 0 ;
+    size_t right = sorted_vec.size(); // one position passed the right end
+    while (left < right) {
+        mid = left + (right - left)/2;
+        if (key > sorted_vec[mid]){
+            left = mid+1;
+        }
+        else if (key < sorted_vec[mid]){                                        
+            right = mid;
+        }
+        else {                                                                  
+            return true;
+        }                                                                                                               
+    }
+
+    return false;      
+}
+```
+
+参见：[Using Binary Search with Vectors](https://stackoverflow.com/questions/18774858/using-binary-search-with-vectors?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
 
 ​		

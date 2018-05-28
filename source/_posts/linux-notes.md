@@ -94,6 +94,13 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
 
   - &：当在前台运行某个作业时，终端被该作业占据；可以在命令后面加上& 实现后台运行。
 
+    ```shell
+    #如果是&&，那么这相当于串行执行程序，即前面的程序运行成功后才去执行后面的程序
+    cat 1.txt && cat 2.txt #执行成功cat 1.txt命令才能执行cat 2.txt
+    ```
+
+    参见：[linux shell 执行多个命令的几种方法](http://www.cnblogs.com/xuxm2007/archive/2011/01/16/1936836.html)
+
   - nohup:  使用&命令后，作业被提交到后台运行，当前控制台没有被占用，但是一但把当前控制台关掉(退出帐户时)，作业就会停止运行。nohup命令可以在你退出帐户之后继续运行相应的进程。nohup就是不挂起的意思( no hang up)。
 
     ```shell
@@ -406,4 +413,49 @@ $ sudo notepadqq /etc/hosts##添加0.0.0.0 account.jetbrains.com进hosts文件
 
   [fatal error: zlib.h & lzma.h : No such file or directory ](https://blog.csdn.net/digent1/article/details/9467739)
 
-  
+
+## 7.linux文件名后面带波浪号的文件
+
+该文件是编辑器打开文件后对原文件生成的备份文件，如果想要禁止这种文件的生成可以在vimrc中添加如下配置
+
+```shell
+vim ~/.vimrc
+set nobackup
+```
+
+[linux下文件名后面带有波浪号](https://blog.csdn.net/zzukun/article/details/49561097)
+[VIM编辑文件时如何不自动生成以波浪线（~）为结尾的文件](https://blog.csdn.net/csCrazybing/article/details/50725715)
+
+## 8.查看linux系统cpu信息
+
+```shell
+$ lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                40 #Core就是平时说的核，双核、四核等，就是每个CPU上的核数
+On-line CPU(s) list:   0-39
+Thread(s) per core:    2 #thread就是每个core上的硬件线程数，即超线程
+Core(s) per socket:    10 #Socket就是主板上插CPU的槽的数量
+Socket(s):             2 #对操作系统来说，其逻辑CPU的数量就是Socket*Core*Thread
+NUMA node(s):          2
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 79
+Model name:            Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+Stepping:              1
+CPU MHz:               1199.945
+CPU max MHz:           3100.0000
+CPU min MHz:           1200.0000
+BogoMIPS:              4391.65
+Virtualization:        VT-x
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              25600K
+NUMA node0 CPU(s):     0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38
+NUMA node1 CPU(s):     1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39
+```
+
+参见：[lscpu中的 socket、core、thread的意义](http://whosemario.github.io/2016/05/20/lscpu-cmd/)
+
