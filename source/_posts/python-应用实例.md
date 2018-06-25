@@ -232,4 +232,33 @@ categories: [python]
     1.txt            baqtools.cpp             bgitools.cpp       exc.e.bak  globalb.cpp                    grptools.hpp [...]
     ```
 
-    ​
+15. python多进程
+
+```python
+import multiprocessing
+from multiprocessing import Pool
+from time import time,sleep
+import shelve
+
+def test(num):
+    #sleep(2)
+    #path = '/home/bgi902/20170913-Annotation/Demo01/bin/hg19_Reseq/hg19.fa.indx1'
+    path = '/mnt/hgfs/VM_Share/work/output/Demo01/bin/hg19_Reseq/hg19.fa.indx2'
+    #path = r'D:\VM_Share\work\output\Demo01\bin\hg19_Reseq\hg19.fa.indx1'
+    a = shelve.open(path)
+    chrseq = a['chr10'][:100]
+    a.close()
+    print(chrseq)
+    return chrseq
+
+if __name__ == "__main__":
+    start = time()
+
+    pool = Pool(multiprocessing.cpu_count()-1)
+    a = pool.map(test,range(100000))
+    pool.close()
+    pool.join()
+    end = time()
+	print('spend time：' + str(stop-start) + "seconds")
+```
+
