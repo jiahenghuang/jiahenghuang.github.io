@@ -94,6 +94,13 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
 
   - &：当在前台运行某个作业时，终端被该作业占据；可以在命令后面加上& 实现后台运行。
 
+    ```shell
+    #如果是&&，那么这相当于串行执行程序，即前面的程序运行成功后才去执行后面的程序
+    cat 1.txt && cat 2.txt #执行成功cat 1.txt命令才能执行cat 2.txt
+    ```
+
+    参见：[linux shell 执行多个命令的几种方法](http://www.cnblogs.com/xuxm2007/archive/2011/01/16/1936836.html)
+
   - nohup:  使用&命令后，作业被提交到后台运行，当前控制台没有被占用，但是一但把当前控制台关掉(退出帐户时)，作业就会停止运行。nohup命令可以在你退出帐户之后继续运行相应的进程。nohup就是不挂起的意思( no hang up)。
 
     ```shell
@@ -252,7 +259,24 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
   	sh test3.sh 1 > test3.sh.info 2 > test3.sh.err &
   ```
 
-  ​
+- top命令详解：https://kevinguo.me/2018/02/09/Linux-top/
+
+- htop用法
+
+  - 下载：https://sourceforge.net/projects/htop/
+
+  - 安装：https://blog.csdn.net/assassinsshadow/article/details/79092209
+
+    ```shell
+    tar -zxvf xxx.tar.gz
+    ./configure #若报错添加--disable-unicode参数：./configure --disable-unicode
+    make 
+    make install
+    ```
+
+  - 用法：[为什么 Linux 的 htop 命令完胜 top 命令](https://linux.cn/article-3141-1.html)
+
+    按下 F5 键切换到树状视图，可以清晰看到同一个进程在所有cpu中的资源消耗情况
 
 
 ## 4.ubuntu使用中的一些问题
@@ -329,7 +353,27 @@ gsettings set com.canonical.Unity.Launcher launcher-position Left
 
 参考:[Ubuntu 16.04 设置菜单栏位置](https://blog.csdn.net/u011642663/article/details/73556095)
 
+### 4.6 ubuntu开机自动挂载新硬盘
 
+1. sudo fdisk -l #硬盘识别
+
+2. sudo mkfs.ext4 /dev/sdb1 #格式化新硬盘
+
+3. sudo mount /dev/sdb1 /data /data目录为硬盘将挂载的地方\挂载分区
+
+4. sudo blkid #查看磁盘分区的UUID
+
+   > /dev/sda1: UUID="8048997a-16c9-447b-a209-82e4d380326e" TYPE="ext4"
+   >
+   > /dev/sda5: UUID="0c5f073a-ad3f-414f-85c2-4af83f6a437f" TYPE="swap"
+   >
+   > /dev/sdb1: UUID="11263962-9715-473f-9421-0b604e895aaa" TYPE="ext4"
+   >
+   > /dev/sr0: LABEL="Join Me" TYPE="iso9660" 
+
+5. sudo vim /etc/fstab #配置开机自动挂载
+
+   > UUID=11263962-9715-473f-9421-0b604e895aaa /data ext4 defaults 0 1
 
 ## 5.本地winscp+secureCRT连接虚拟机linux系统
 
@@ -406,4 +450,91 @@ $ sudo notepadqq /etc/hosts##添加0.0.0.0 account.jetbrains.com进hosts文件
 
   [fatal error: zlib.h & lzma.h : No such file or directory ](https://blog.csdn.net/digent1/article/details/9467739)
 
-  
+
+## 7.linux文件名后面带波浪号的文件
+
+该文件是编辑器打开文件后对原文件生成的备份文件，如果想要禁止这种文件的生成可以在vimrc中添加如下配置
+
+```shell
+vim ~/.vimrc
+set nobackup
+```
+
+[linux下文件名后面带有波浪号](https://blog.csdn.net/zzukun/article/details/49561097)
+[VIM编辑文件时如何不自动生成以波浪线（~）为结尾的文件](https://blog.csdn.net/csCrazybing/article/details/50725715)
+
+## 8.查看linux系统cpu信息
+
+```shell
+$ lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                40 #Core就是平时说的核，双核、四核等，就是每个CPU上的核数
+On-line CPU(s) list:   0-39
+Thread(s) per core:    2 #thread就是每个core上的硬件线程数，即超线程
+Core(s) per socket:    10 #Socket就是主板上插CPU的槽的数量
+Socket(s):             2 #对操作系统来说，其逻辑CPU的数量就是Socket*Core*Thread
+NUMA node(s):          2
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 79
+Model name:            Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+Stepping:              1
+CPU MHz:               1199.945
+CPU max MHz:           3100.0000
+CPU min MHz:           1200.0000
+BogoMIPS:              4391.65
+Virtualization:        VT-x
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              25600K
+NUMA node0 CPU(s):     0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38
+NUMA node1 CPU(s):     1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39
+```
+
+参见：[lscpu中的 socket、core、thread的意义](http://whosemario.github.io/2016/05/20/lscpu-cmd/)
+
+## 9. 远程ssh协议安装
+
+```shell
+#报错：ssh: connect to xxxxxxxxxx port 22: Connection refused
+#1.确定安装sshd: 
+sudo apt-get install openssh-server 
+#2.启动sshd: 
+service sshd restart 
+#3.检查防火墙设置
+
+#检验方法： 
+#输入命令：
+ssh localhost 
+#若成功，则表示安装成功，且连接通过
+```
+
+参考：[ssh: connect to xxxxxxxxxx port 22: Connection refused](https://blog.csdn.net/manjianchao/article/details/76280772)
+
+## 10. 服务器免密钥登陆设置方法
+
+1. 把从客户端传来的公钥添加到.ssh/authorized_keys中
+
+   ```shell
+   cat id_rsa.pub >> .ssh/authorized_keys
+   chmod 600 .ssh/authorized_keys
+   ```
+
+2. 修改ssh配置文件/etc/ssh/sshd_config，找到下面一行：
+
+   `PubkeyAuthentication no`修改为：`PubkeyAuthentication yes`
+
+3. 测试：
+
+```shell
+ssh root@172.16.64.19
+#无须输入密码则配置成功
+```
+
+参考：[Linux上实现ssh免密码登陆远程服务器](http://blog.51cto.com/xpleaf/1924771)
+
+
+
