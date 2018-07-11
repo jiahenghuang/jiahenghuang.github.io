@@ -130,9 +130,9 @@ $$
 >
 > ...
 >
-> $\beta_j(1)=\sum_{i=1}^K\beta_i(2)b_i(y_2)a_{j,i}=p(y_1,y_2,...,y_T|q_1=j)$
+> $\beta_j(1)=\sum_{i=1}^K\beta_i(2)b_i(y_2)a_{j,i}=p(y_2,...,y_T|q_1=j)$
 >
-> $p(y_1,y_2,...,y_T)=\sum_{j=1}^Kp(y_1,y_2,...,y_T,q_1=j)=\sum_{j=1}^K\beta(1)\pi_j$
+> $p(y_1,y_2,...,y_T)=\sum_{j=1}^Kp(y_1,...,y_T,q_1=j)=\sum_{j=1}^Kp(y_1,q_1=j)p(y_2,...y_T|q_1=j)=\sum_{j=1}^K\alpha_j(1)\beta_j(1)$
 
 #### 2.2.3 Baum-welch算法
 
