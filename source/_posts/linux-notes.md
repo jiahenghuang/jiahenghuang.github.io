@@ -90,6 +90,14 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
   #指定k参数是保留输入文件xxx.fq的意思，默认不保留输入文件。
   ```
 
+- tar.gz解压：`tar -zxvf ***.tar.gz`
+
+- tar.bz2解压：`tar -jxvf ×××.tar.bz2`
+
+- .tar文件解压:`tar –xvf file.tar`
+
+- .tar文件压缩:`tar -cvf file.tar main.cpp mainapp.exe`
+
 - nohup与&命令(http://blog.csdn.net/liuyanfeier/article/details/62422742)：
 
   - &：当在前台运行某个作业时，终端被该作业占据；可以在命令后面加上& 实现后台运行。

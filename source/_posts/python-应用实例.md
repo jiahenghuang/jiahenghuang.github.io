@@ -83,7 +83,14 @@ categories: [python]
    refGene = sorted(a, key=myKey)
    ```
 
-7. python3计算时间差、从字符串中匹配出时间信息
+7. 对list排序并返回排序后的索引
+
+   ```python
+   residual = sorted([key for key in cycle]) #默认升序排序
+   index = sorted(range(len(residual)), key=lambda k: residual[k])#返回排序后的索引
+   ```
+
+8. python3计算时间差、从字符串中匹配出时间信息
 
    ```python
    import time
@@ -96,7 +103,7 @@ categories: [python]
    print(re.match(r".*([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2})", str_).group(1)) ##从字符串中匹配出时间信息:2017-10-25 14:04:36
    ```
 
-8. 列表(list)元素取交集
+9. 列表(list)元素取交集
 
    ```python
    dupPath = r'd:\dup.txt'
@@ -110,7 +117,7 @@ categories: [python]
    set(dup) & set(strangeIntron)
    ```
 
-9. 浅拷贝与深拷贝的用法
+10. 浅拷贝与深拷贝的用法
 
    ```python
    #浅拷贝
@@ -140,27 +147,27 @@ categories: [python]
    {1: {1: {1: 2}, 2: 3}, 2: 3}
    ```
 
-10. python计数
+11. python计数
 
-  ```python
-  try:
-      from collections import Counter
-  except ImportError:
-      from counter import Counter
-  d = Counter('simsalabim')
-  c = Counter('abcdeabcdabcaba')
-  c
-  #Counter({'a': 5, 'b': 4, 'c': 3, 'd': 2, 'e': 1})
-  c.update(d)
-  c['a']
-  #7
-  ```
+   ```python
+   try:
+       from collections import Counter
+   except ImportError:
+       from counter import Counter
+   d = Counter('simsalabim')
+   c = Counter('abcdeabcdabcaba')
+   c
+   #Counter({'a': 5, 'b': 4, 'c': 3, 'd': 2, 'e': 1})
+   c.update(d)
+   c['a']
+   #7
+   ```
 
-11. Eclipse美化中文字体：http://www.everycoding.com/coding/299.html
+12. Eclipse美化中文字体：http://www.everycoding.com/coding/299.html
 
    把eclipse放在这里是因为我的python ide用的就是eclipse+pydev.
 
-12. python统计程序执行时间
+13. python统计程序执行时间
 
    > 在 Unix 系统中，建议使用 time.time()，在 Windows 系统中，建议使用 time.clock()
    > if sys.platform == "win32":
@@ -181,7 +188,7 @@ categories: [python]
 
    ```python
    import timeit
-
+   
    def timeTest():
        start = timeit.default_timer()
        print("Start: " + str(start))
@@ -190,10 +197,10 @@ categories: [python]
        stop = timeit.default_timer()
        print("Stop: " + str(stop))
        print(str(stop-start) + "秒")
-
+   
    def main():
        timeTest()
-
+   
    if __name__=='__main__':
        main()
    ```
@@ -261,4 +268,38 @@ if __name__ == "__main__":
     end = time()
 	print('spend time：' + str(stop-start) + "seconds")
 ```
+
+16. linux系统python与anaconda3共存的方法（即输入python仍然使用自带的python2.7，但conda能用，python3也仍然是anaconda的python3）
+
+- 将~/mnt/share1/liusheng_test/bin目录中的python更名为python2
+- vim xxx/bin/conda
+  - 修改#!xxx/liusheng_test/bin/python为#!xxx/bin/python2
+
+17. linux系统监控进程的内存消耗
+
+    ```python
+    import commands, os, re
+    
+    def process_info():
+        pid = os.getpid()
+        res = commands.getstatusoutput('ps aux|grep '+str(pid))[1].split('\n')[0]
+    
+        p = re.compile(r'\s+')
+        l = p.split(res)
+        info = {'user':l[0],
+                'pid':l[1],
+                'cpu':l[2],
+                'mem':l[3],
+                'vsa':l[4],
+                'rss':l[5],
+                'start_time':l[6]}
+        return info
+    ```
+
+18. [在Eclipse中如何利用在Anaconda中建立的Python虚拟环境进行开发](http://www.voidcn.com/article/p-nfyzcwig-bqo.html)
+
+- 找到anaconda虚拟环境
+  - 一般情况下所在路径：anaconda安装路径——>envs——>环境名文件夹——>python.exe
+  - 特殊情况下：C:\Users\ls\AppData\Local\conda\conda\envs\py2
+- 在Eclipse中进行如下设置：	window——>preferences——>pydev——>Interpreters——>python Interpreters
 

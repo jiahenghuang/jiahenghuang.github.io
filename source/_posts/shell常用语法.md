@@ -48,5 +48,16 @@ if [ -f $filename ]; then echo "True"; fi #-f 判断文件是否存在
 if [ ! -f $filename ]; then echo "False"; fi #判断文件是否不存在
 ```
 
+## 4. 生成等差数列
+
+```shell
+$ seq 1 3 10    #从1开始，到10 间隔为3 结果是：1 4 7 10
+$ a=($(seq  1 3 10))    
+$ echo ${a[1]}
+4
+$ echo ${a[@]}
+1 4 7 10
+```
+
 
 
