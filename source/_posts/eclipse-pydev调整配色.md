@@ -11,12 +11,17 @@ categories: python
 
 <!--more-->
 
-点击 Window--Preferences，左边找到General--Editors--Text Editors--Annotations,右边选中Breakpoints(PyDev),修改默认颜色如下图： 
+修改显示的背景色：
 
-![20180805094012](eclipse-pydev调整配色/20180805094012.png)
+Window->Preferences->General->Editors->Text Editors->Annotations->Occurrences
+
+![20180805094640](eclipse-pydev调整配色/20180805094640.png)
 
 再看下效果是不是好多了
 
 ![20180805094158](eclipse-pydev调整配色/20180805094158.png)
 
-参考：[eclipse安装pyDev，并调整色彩配置以适应暗黑主题](https://blog.csdn.net/leejeff/article/details/80432103)
+参考（第一个参考链接的修改是正解）：
+
+1. [Eclipse修改相同内容的高亮显示（pydev编辑python）](https://blog.csdn.net/jerrygaoling/article/details/81116052)
+2. [eclipse安装pyDev，并调整色彩配置以适应暗黑主题](https://blog.csdn.net/leejeff/article/details/80432103)
