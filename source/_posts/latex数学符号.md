@@ -153,7 +153,33 @@ $$x^n+y^n=z^n \tag{1.1}$$
 
 参考：[使用LaTeX写矩阵 ](https://blog.csdn.net/bendanban/article/details/44221279)
 
+## 4. 符号
 
+- 叉乘
+
+  **语法**
+
+  ```latex
+  a \times b
+  ```
+
+  **显示效果**
+
+  $$a \times b$$
+
+- 除以
+
+  **语法**
+
+  ```latex
+  a \div b
+  ```
+
+  **显示效果**
+
+  $$a \div b$$
+
+  
 
 
 

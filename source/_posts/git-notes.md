@@ -39,7 +39,16 @@ git的常用命令
    git branch -m master hexo
    ```
 
-6. 多人协作提交代码时如何方便的解决冲突
+6. 删除分支
+
+   ```shell
+   #删除本地分支
+   git branch -D branchName 
+   #删除远程分支
+   git push origin :branchName
+   ```
+
+7. 多人协作提交代码时如何方便的解决冲突
 
    ```shell
    #先将代码备份，再执行下行命令
@@ -53,7 +62,7 @@ git的常用命令
    git push #提交自己的更新
    ```
 
-7. git push免密登陆
+8. git push免密登陆
 
    ```shell
    #如果已经使用https协议克隆了，那么按照如下方法更改协议： 
