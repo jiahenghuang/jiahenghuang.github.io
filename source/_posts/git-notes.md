@@ -7,8 +7,6 @@ categories: git
 
 git的常用命令
 
-<!--more-->
-
 1. git创建分支
 
    ```shell

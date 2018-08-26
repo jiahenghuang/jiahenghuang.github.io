@@ -21,8 +21,6 @@ $ chmod +777 nmon_x86_64_ubuntu15
 $ cp nmon_x86_64_ubuntu15 /usr/local/bin/nmon
 ```
 
-<!--more-->
-
 ## 3. 运行nmon工具
 
 ```shell

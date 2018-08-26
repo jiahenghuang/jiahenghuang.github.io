@@ -14,8 +14,6 @@ categories: c++
 __P__ （放到main里面）
 ```
 
-<!--more-->
-
 ### 2. c++ ios::base用法
 
 > 1. 凡包含std::ios_base::out mode的操作方式，如果文件不存在都是会创建.

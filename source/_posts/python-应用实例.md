@@ -21,8 +21,6 @@ categories: [python]
     https://www.embeddedartists.com/sites/default/files/support/com/iMX_Developing_with_Python.pdf
     	http://o-u-u.com/?p=2015&pn=%E5%9C%A8eclipse%E4%B8%AD%E4%BD%BF%E7%94%A8pydev%E6%8F%92%E4%BB%B6%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95python&cat=%E9%A6%96%E9%A1%B5-2%2Feclipse
 
-    <!--more-->
-
 5. elipse调试快捷键：
     单步跳入:step into调试，进入语句中的子函数进行步进调试
     	单步跳过:step over调试，跳过该行语句，进入下一行进行调试
@@ -119,33 +117,33 @@ categories: [python]
 
 10. 浅拷贝与深拷贝的用法
 
-   ```python
-   #浅拷贝
-   >>> a = {1:{1:2},2:3}
-   >>> b=a.copy()
-   >>> a.pop(1)
-   >>> a
-   {2: 3}
-   >>> b
-   {1: {1: 2}, 2: 3}
-   
-   >>> a = {1:{1:2},2:3}
-   >>> b=a.copy()
-   >>> a[1].pop(1)
-   >>> a
-   {1: {}, 2: 3}
-   >>> b
-   {1: {}, 2: 3}
-   #深拷贝
-   >>> import copy
-   >>> a = {1:{1:{1:2},2:3},2:3}
-   >>> b=copy.deepcopy(a)
-   >>> a[1][1].pop(1)
-   >>> a
-   {1: {1: {}, 2: 3}, 2: 3}
-   >>> b
-   {1: {1: {1: 2}, 2: 3}, 2: 3}
-   ```
+  ```python
+  #浅拷贝
+  >>> a = {1:{1:2},2:3}
+  >>> b=a.copy()
+  >>> a.pop(1)
+  >>> a
+  {2: 3}
+  >>> b
+  {1: {1: 2}, 2: 3}
+  
+  >>> a = {1:{1:2},2:3}
+  >>> b=a.copy()
+  >>> a[1].pop(1)
+  >>> a
+  {1: {}, 2: 3}
+  >>> b
+  {1: {}, 2: 3}
+  #深拷贝
+  >>> import copy
+  >>> a = {1:{1:{1:2},2:3},2:3}
+  >>> b=copy.deepcopy(a)
+  >>> a[1][1].pop(1)
+  >>> a
+  {1: {1: {}, 2: 3}, 2: 3}
+  >>> b
+  {1: {1: {1: 2}, 2: 3}, 2: 3}
+  ```
 
 11. python计数
 
@@ -301,5 +299,5 @@ if __name__ == "__main__":
 - 找到anaconda虚拟环境
   - 一般情况下所在路径：anaconda安装路径——>envs——>环境名文件夹——>python.exe
   - 特殊情况下：C:\Users\ls\AppData\Local\conda\conda\envs\py2
-- 在Eclipse中进行如下设置：	window——>preferences——>pydev——>Interpreters——>python Interpreters
+		在Eclipse中进行如下设置：	window——>preferences——>pydev——>Interpreters——>python Interpreters
 

@@ -26,8 +26,6 @@ categories:
    - 文章之间的分割线等
 5. 博客备份
 
-<!-- more -->
-
 # 1.github安装
 
 略。
@@ -87,6 +85,8 @@ $ hexo s #hexo server,用于启动本地服务器，预览网页
 添加搜索功能，参考[Hexo博客添加搜索功能](http://www.itfanr.cc/2017/10/27/add-search-function-to-hexo-blog/)
 
 进阶配置，参考[**hexo+github搭建博客**](http://stevenshi.me/2017/05/07/hexo-blog/)
+
+首页文章预览功能(即点开可阅读全文):[Hexo之next主题设置首页不显示全文(只显示预览)](https://www.jianshu.com/p/393d067dba8d)
 
 # 5.博客备份
 

@@ -7,8 +7,6 @@ categories: python
 
 ## 1. 编译链接c动态链接库
 
-<!--more-->
-
 **分别编写c代码如下**
 
 ```c

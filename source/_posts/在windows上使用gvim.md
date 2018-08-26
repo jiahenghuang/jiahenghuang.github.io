@@ -7,8 +7,6 @@ categories: vim
 
 git bash需要使用ctrl+insert来复制，shift+insert来拷贝，有点麻烦，用gvim可以让vim使用ctrl+c,ctrl+v来复制拷贝，但是还有其他的好处，即使gvim比git bash中的vim好用并且好看多了！
 
-<!--more-->
-
 1. 下载安装[gvim](https://gvim.en.softonic.com/)
 
 2. 配置`Vim\vim80\vimrc_example.vim`

@@ -11,8 +11,6 @@ categories: linux
 $ less noFilter.realn.sam | awk '{if ($3 == "chr16") {print $0}}' >> chr16.sam
 ```
 
-<!--more-->
-
 2. sed替换文件中的某一行
 
 ```shell

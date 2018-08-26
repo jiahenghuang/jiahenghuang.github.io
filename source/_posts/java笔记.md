@@ -86,8 +86,6 @@ public static void method1(String file, String conent) {
     }
 ```
 
-<!--more-->
-
 参考:[java 追加内容到文件末尾的几种常用方法](https://blog.csdn.net/jsjwk/article/details/3942167)
 
 2. Intelij java工程打成可执行jar包
