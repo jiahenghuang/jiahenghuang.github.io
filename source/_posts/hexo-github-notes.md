@@ -125,13 +125,15 @@ hexo在github上部署的只是静态页面，并没有推送源文件，这样�
 
    执行如下命令，在“新电脑上”安装hexo环境
 
-   - npm install hexo-cli --save #在新电脑上配置hexo
-   - npm install hexo --save
-   - npm install hexo-server --save
-   - npm install hexo-generator-search --save
-   - npm install hexo-deployer-git --save
-   - npm install hexo-asset-image --save
-     - 注：需要设置站点配置文件`post_asset_folder: true`
+   ```shell
+   npm install hexo-cli --save #在新电脑上配置hexo
+   npm install hexo --save
+   npm install hexo-server --save
+   npm install hexo-generator-search --save
+   npm install hexo-deployer-git --save
+   npm install hexo-asset-image --save
+   #注：需要设置站点配置文件post_asset_folder: true
+   ```
 
    或者直接用npm install, npm会自动安装package.json中的各个包。我在公司电脑上试的时候，发现npm install会报下图中的错。
 
