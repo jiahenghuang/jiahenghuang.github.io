@@ -33,8 +33,9 @@ $$
 
    参考链接:
 
-   1. [常用数学符号的 LaTeX 表示方法](http://wdxtub.com/2016/03/26/latex-notation-table/)
-   2. [Latex 常用符号表](http://wulc.me/2016/09/18/%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7%E7%9A%84%20LaTeX%20%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95/)
+      1. [常用数学符号的 LaTeX 表示方法](http://wdxtub.com/2016/03/26/latex-notation-table/)
+      2. [Latex 常用符号表](http://wulc.me/2016/09/18/%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7%E7%9A%84%20LaTeX%20%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95/)
+      3. [Texlive: latex数学符号表(2) ](http://blog.sina.com.cn/s/blog_4df4d74401014qxb.html)
 
 <!--more-->
 
