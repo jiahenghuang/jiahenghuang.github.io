@@ -16,8 +16,8 @@ ls@ls:~$ sudo adduser git
 正在添加新用户"git" (1001) 到组"git"...
 创建主目录"/home/git"...
 正在从"/etc/skel"复制文件...
-输入新的 UNIX 密码： 
-重新输入新的 UNIX 密码： 
+输入新的 UNIX 密码：
+重新输入新的 UNIX 密码：
 passwd：已成功更新密码
 正在改变 git 的用户信息
 请输入新值，或直接敲回车键以使用默认值
@@ -27,8 +27,10 @@ passwd：已成功更新密码
         家庭电话 []: 
         其它 []: 
 这些信息是否正确？ [Y/n] y
-ls@ls:~$ su git
-密码： 
+#为git配置管理员权限
+ls@ls:~$ sudo vim /etc/sudoers
+#在“root    ALL=(ALL:ALL) ALL”这一行下方添加"git    ALL=(ALL:ALL) ALL"
+ls@ls:~$ su git 
 git@ls:/home/ls$ cd
 git@ls:~$
 ```

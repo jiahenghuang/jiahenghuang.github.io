@@ -7,8 +7,6 @@ categories: windows
 
 这两个配置文件也是从同事那里拷贝过来的，分别是ecd和env_set两个命令，ecd能让你很方便的打开目录，env_set可以让你很快的打开环境变量设置界面
 
-<!--more-->
-
 ### env_set配置
 
 ```bash

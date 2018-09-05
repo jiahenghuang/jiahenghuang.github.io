@@ -26,8 +26,6 @@ categories:
    - 文章之间的分割线等
 5. 博客备份
 
-<!-- more -->
-
 # 1.github安装
 
 略。
@@ -88,6 +86,8 @@ $ hexo s #hexo server,用于启动本地服务器，预览网页
 
 进阶配置，参考[**hexo+github搭建博客**](http://stevenshi.me/2017/05/07/hexo-blog/)
 
+首页文章预览功能(即点开可阅读全文):[Hexo之next主题设置首页不显示全文(只显示预览)](https://www.jianshu.com/p/393d067dba8d)
+
 # 5.博客备份
 
 hexo在github上部署的只是静态页面，并没有推送源文件，这样当我们换了一台电脑，就得重新搭一次博客，配置同样的样式，将hexo搭建博客的源文件放在github仓库的另一个分支可以避免这个繁琐的操作。
@@ -125,13 +125,15 @@ hexo在github上部署的只是静态页面，并没有推送源文件，这样�
 
    执行如下命令，在“新电脑上”安装hexo环境
 
-   - npm install hexo-cli --save #在新电脑上配置hexo
-   - npm install hexo --save
-   - npm install hexo-server --save
-   - npm install hexo-generator-search --save
-   - npm install hexo-deployer-git --save
-   - npm install hexo-asset-image --save
-     - 注：需要设置站点配置文件`post_asset_folder: true`
+   ```shell
+   npm install hexo-cli --save #在新电脑上配置hexo
+   npm install hexo --save
+   npm install hexo-server --save
+   npm install hexo-generator-search --save
+   npm install hexo-deployer-git --save
+   npm install hexo-asset-image --save
+   #注：需要设置站点配置文件post_asset_folder: true
+   ```
 
    或者直接用npm install, npm会自动安装package.json中的各个包。我在公司电脑上试的时候，发现npm install会报下图中的错。
 

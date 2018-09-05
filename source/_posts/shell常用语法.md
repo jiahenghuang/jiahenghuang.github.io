@@ -7,8 +7,6 @@ categories: shell
 
 linux中必会的语法
 
-<!--more-->
-
 ## 1. shell如何设置默认参数
 
 ```shell

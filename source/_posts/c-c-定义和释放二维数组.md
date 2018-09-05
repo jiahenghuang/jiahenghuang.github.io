@@ -7,8 +7,6 @@ categories: [c, c++]
 
 # 返回二维指针变量
 
-<!--more-->
-
 ```c++
 #include <iostream>
 #include <assert.h>

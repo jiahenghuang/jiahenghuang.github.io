@@ -7,8 +7,6 @@ categories: markdown
 
 # 1. 段落居中
 
-<!---more-->
-
 **语法**
 
 ```markdown

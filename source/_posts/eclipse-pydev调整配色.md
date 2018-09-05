@@ -9,8 +9,6 @@ categories: python
 
 ![20180805093503](eclipse-pydev调整配色/20180805093503.png)
 
-<!--more-->
-
 修改显示的背景色：
 
 Window->Preferences->General->Editors->Text Editors->Annotations->Occurrences
