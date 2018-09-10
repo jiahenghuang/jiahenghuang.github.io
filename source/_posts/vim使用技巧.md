@@ -60,6 +60,13 @@ categories: vim
 > - ]c 下一个差异点
 > - [c 上一个差异点
 
+6. 设置自动折行(https://blog.csdn.net/songbohr/article/details/5098855)
+
+   ```shell
+   #是把长的一行用多行显示 , 不在文件里加换行符用
+   :set wrap 设置自动折行
+   :set nowrap 设置不自动折行
+   ```
 
 
 
