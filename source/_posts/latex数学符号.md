@@ -2,6 +2,7 @@
 title: latex数学符号
 date: 2018-05-09 09:13:12
 tags: [latex, 数学符号]
+mathjax: true
 categories: latex
 ---
 
@@ -178,7 +179,6 @@ $$x^n+y^n=z^n \tag{1.1}$$
 
   $$a \div b$$
 
-  
 
 
 

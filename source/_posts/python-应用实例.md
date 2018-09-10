@@ -135,15 +135,20 @@ print(re.match(r".*([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2})", str
 - 列表(list)元素取交集
 
 ```python
-dupPath = r'd:\dup.txt'
-with open(dupPath) as f:
-	dup = [line.split('\t')[0] for line in f]
+#https://blog.csdn.net/isoleo/article/details/13000975
+>>> x = set('spam')  
+>>> y = set(['h','a','m'])  
+>>> x, y  
+(set(['a', 'p', 's', 'm']), set(['a', 'h', 'm']))  
 
-strangeIntronPath = r'd:\refGene_v1_1.txt'
-with open(strangeIntronPath) as f:
-	strangeIntron = [line.split('\t')[0] for line in f]
+>>> x & y # 交集  
+set(['a', 'm'])  
 
-set(dup) & set(strangeIntron)
+>>> x | y # 并集  
+set(['a', 'p', 's', 'h', 'm'])  
+
+>>> x - y # 差集  
+set(['p', 's']) 
 ```
 
 - 浅拷贝与深拷贝的用法

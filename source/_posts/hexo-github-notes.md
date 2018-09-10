@@ -88,6 +88,25 @@ $ hexo s #hexo server,用于启动本地服务器，预览网页
 
 首页文章预览功能(即点开可阅读全文):[Hexo之next主题设置首页不显示全文(只显示预览)](https://www.jianshu.com/p/393d067dba8d)
 
+在文章开头设置mathjax开关，只有需要编辑数学公式的文章才加载mathjax渲染(参见[Hexo下Next主题美化(一)数学公式的渲染](https://linbaijiong.github.io/2018/02/07/Hexo%E4%B8%8BNext%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96-%E4%B8%80-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%B8%B2%E6%9F%93/))
+
+```shell
+#在next主题中打开mathjax开关：/theme/next/_config.yml 把enable改为true
+# MathJax Support
+mathjax:
+  enable: true
+  per_page: true
+  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
+  
+#假如你不想每篇文章都手动打上mathjax: true，那么你可以在站点根目录文件scaffolds/post.md中修改，添加上mathjax这一项，这样你每次写博客时Front-matter都会有这一项(实际上我们修改的就是博客Front-matter的模板)
+---
+title: {{ title }}
+date: {{ date }}
+tags:
+mathjax:
+---
+```
+
 # 5.博客备份
 
 hexo在github上部署的只是静态页面，并没有推送源文件，这样当我们换了一台电脑，就得重新搭一次博客，配置同样的样式，将hexo搭建博客的源文件放在github仓库的另一个分支可以避免这个繁琐的操作。
