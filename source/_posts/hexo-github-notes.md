@@ -88,7 +88,7 @@ $ hexo s #hexo server,用于启动本地服务器，预览网页
 
 首页文章预览功能(即点开可阅读全文):[Hexo之next主题设置首页不显示全文(只显示预览)](https://www.jianshu.com/p/393d067dba8d)
 
-在文章开头设置mathjax开关，只有需要编辑数学公式的文章才加载mathjax渲染(参见[Hexo下Next主题美化(一)数学公式的渲染](https://linbaijiong.github.io/2018/02/07/Hexo%E4%B8%8BNext%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96-%E4%B8%80-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%B8%B2%E6%9F%93/))
+在文章开头设置mathjax开关，只有需要编辑数学公式的文章才加载mathjax渲染(参见[Hexo下Next主题美化(一)数学公式的渲染](https://linbaijiong.github.io/2018/02/07/Hexo%E4%B8%8BNext%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96-%E4%B8%80-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%B8%B2%E6%9F%93/)，[load mathjax only when mathjax is needed](https://github.com/iissnan/hexo-theme-next/pull/887))
 
 ```shell
 #在next主题中打开mathjax开关：/theme/next/_config.yml 把enable改为true
