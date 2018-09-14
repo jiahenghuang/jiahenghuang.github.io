@@ -7,6 +7,8 @@ categories: git
 
 git的常用命令
 
+# 1.分支
+
 1. git创建分支
 
    ```shell
@@ -46,7 +48,16 @@ git的常用命令
    git push origin :branchName
    ```
 
-7. 多人协作提交代码时如何方便的解决冲突
+7. 为分支打上tag
+
+   ```shell
+   $ git tag -m "Tag version 1.0" V1.0 3ede462 #V1.0是当前提交3ede462的标签
+   ```
+
+
+# 2.提交代码
+
+1. 多人协作提交代码时如何方便的解决冲突
 
    ```shell
    #先将代码备份，再执行下行命令
@@ -60,7 +71,7 @@ git的常用命令
    git push #提交自己的更新
    ```
 
-8. git push免密登陆
+2. git push免密登陆
 
    ```shell
    #如果已经使用https协议克隆了，那么按照如下方法更改协议： 
@@ -68,3 +79,10 @@ git的常用命令
    ```
 
    参考：[git push 免密码](https://bryceyang.github.io/blog/2017/05/25/Tips/#heading-git-push-%E5%85%8D%E5%AF%86%E7%A0%[81)、[杨凯的回答](https://www.zhihu.com/question/31836445)
+
+3. 提交时使用vim作为默认编辑器
+
+   ```shell
+   $ export GIT_EDITOR=vim #在.bashrc中添加
+   $ source .bashrc
+   ```

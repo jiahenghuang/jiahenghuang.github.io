@@ -415,49 +415,7 @@ gsettings set com.canonical.Unity.Launcher launcher-position Left
 		设置的颜色怎么舒服点：http://www.voidcn.com/article/p-rfuzpsmu-up.html
 
 
-## 6. clion安装与卸载
-
-参考：http://www.voidcn.com/article/p-evedqfrg-kd.html
-
-```shell
-$ tar -zxvf CLion-2016.3.5.tar.gz#解压
-#进入bin目录,执行sh文件：
-$ ./clion.sh
-$ sudo notepadqq /etc/hosts##添加0.0.0.0 account.jetbrains.com进hosts文件
-#添加激活码：http://idea.lanyus.com/
-```
-
-**卸载**
-
-> Delete the installation directory
-> Delete the "config" and "system" configuration directories. These contain IntelliJ IDEA's caches, configuration and plugins.`（~/.<PRODUCT><VERSION>）`
-
-- c/c++工程环境配置
-
-  ```shell
-  #cmake安装
-  sudo apt-get install cmake
-  #g++环境
-  sudo apt-get install g++
-  #fatal error: bzlib.h: No such file or directory 问题
-  sudo apt-get install libboost-all-dev
-  sudo apt-get install libbz2-dev
-  #fatal error: zlib.h & lzma.h : No such file or directory
-  sudo apt-get install liblzma-dev
-  ```
-
-  参考：
-
-  [g++: command not found的解决 ](https://blog.csdn.net/h378588270/article/details/7729268)
-
-  [ubuntu安装CMake的几种方式 ](https://blog.csdn.net/lj402159806/article/details/76408597)
-
-  [解决 Boost安装：fatal error: bzlib.h: No such file or directory 问题](https://www.cnblogs.com/qq952693358/p/8563048.html)
-
-  [fatal error: zlib.h & lzma.h : No such file or directory ](https://blog.csdn.net/digent1/article/details/9467739)
-
-
-## 7.linux文件名后面带波浪号的文件
+## 6.linux文件名后面带波浪号的文件
 
 该文件是编辑器打开文件后对原文件生成的备份文件，如果想要禁止这种文件的生成可以在vimrc中添加如下配置
 
@@ -469,7 +427,7 @@ set nobackup
 [linux下文件名后面带有波浪号](https://blog.csdn.net/zzukun/article/details/49561097)
 [VIM编辑文件时如何不自动生成以波浪线（~）为结尾的文件](https://blog.csdn.net/csCrazybing/article/details/50725715)
 
-## 8.查看linux系统cpu信息
+## 7.查看linux系统cpu信息
 
 ```shell
 $ lscpu
@@ -502,7 +460,7 @@ NUMA node1 CPU(s):     1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39
 
 参见：[lscpu中的 socket、core、thread的意义](http://whosemario.github.io/2016/05/20/lscpu-cmd/)
 
-## 9. 远程ssh协议安装
+## 8. 远程ssh协议安装
 
 ```shell
 #报错：ssh: connect to xxxxxxxxxx port 22: Connection refused
@@ -520,7 +478,7 @@ ssh localhost
 
 参考：[ssh: connect to xxxxxxxxxx port 22: Connection refused](https://blog.csdn.net/manjianchao/article/details/76280772)
 
-## 10. 服务器免密钥登陆设置方法
+## 9. 服务器免密钥登陆设置方法
 
 1. 把从客户端传来的公钥添加到.ssh/authorized_keys中
 
