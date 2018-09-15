@@ -284,6 +284,15 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
 
     按下 F5 键切换到树状视图，可以清晰看到同一个进程在所有cpu中的资源消耗情况
 
+- split
+
+  ```shell
+  #二进制文件分割
+  $ split -b 100M 死侍2.rar sishi2 #切分
+  $ cat sishi2* > 死侍2.rar #还原
+  ```
+
+  参见[Linux split 大文件分割与 cat合并文件](https://itbilu.com/linux/man/Nkz2hoeNm.html)
 
 ## 4.ubuntu使用中的一些问题
 
