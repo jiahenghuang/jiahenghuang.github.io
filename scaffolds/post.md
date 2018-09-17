@@ -2,6 +2,6 @@
 title: {{ title }}
 date: {{ date }}
 tags:
-mathjax:
+mathjax: false
 categories:
 ---
