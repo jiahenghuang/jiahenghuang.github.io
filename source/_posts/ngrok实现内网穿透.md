@@ -137,6 +137,23 @@ $ ssh pi@example.com -p 8084
 
 ![](ngrok实现内网穿透/20180917095241.png)
 
+# 5.后台挂起
+
+```shell
+#云服务器端
+$ vim ngrok.sh #写入以下内容
+path=/home/jesson/software/ngrok
+NGROK_DOMAIN=example.com
+${path}/bin/ngrokd -tlsKey="assets/server/tls/snakeoil.key" -tlsCrt="assets/server/tls/snakeoil.crt" -domain="$NGROK_DOMAIN"  -httpAddr=":8081" -httpsAddr=":8082"
+
+$ nohup sudo sh ngrok.sh #不要用nohup sudo sh ngrok.sh & 否则可能错过输入密码，然后关闭当前shell即可，经测试树莓派端仍可连接
+
+#树莓派端
+$ vim ngrok.sh
+./ngrok --config ngrok.yml start pi ssh
+$ nohup sudo sh ngrok.sh #同上，经测试关闭secureCRT,仍能远程访问树莓派，网页输入https://example.com:8082仍然可以看到树莓派上的博客
+```
+
 参考：
 
 - [Ngrok编译](https://my.oschina.net/dingdayu/blog/1525454)
