@@ -12,3 +12,10 @@ categories: hexo
 - cnpm与npm的关系:参见[cnpm与npm的区别](https://blog.csdn.net/chi1130/article/details/72773278)
   1. cnpm与npm命令是一样的，只不过cnpm走的是国内淘宝镜像，要快一些
   2. npm带上`-g` 是全局安装
+
+- npm install 报错出现Unexpected end of JSON input while parsing near
+
+  1. `npm config set registry https://registry.npm.taobao.org`
+  2. `#清楚缓存：npm cache clean --force`
+
+  参见https://juejin.im/post/5a804a926fb9a0634c266c31
