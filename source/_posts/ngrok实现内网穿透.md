@@ -154,6 +154,12 @@ $ vim ngrok.sh
 $ nohup sudo sh ngrok.sh #同上，经测试关闭secureCRT,仍能远程访问树莓派，网页输入https://example.com:8082仍然可以看到树莓派上的博客
 ```
 
+# 6.从另一台电脑克隆树莓派git仓库
+
+```shell
+$ git clone ssh://git@example.com:8084/home/git/blog/hexo.git
+```
+
 参考：
 
 - [Ngrok编译](https://my.oschina.net/dingdayu/blog/1525454)
@@ -163,3 +169,5 @@ $ nohup sudo sh ngrok.sh #同上，经测试关闭secureCRT,仍能远程访问�
   > 另外，我的网站没有备案，所以在最后的协议那里写的是`https: 80`，如果是备案域名的话，写`http: 80`。
 
 - [Ngrok完美实现内网穿透](https://zhuanlan.zhihu.com/p/29019562)
+
+- [git客户端连接ssh端口不是22的gitlab](https://blog.csdn.net/intergameover/article/details/50186239)
