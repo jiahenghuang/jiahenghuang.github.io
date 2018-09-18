@@ -196,6 +196,21 @@ hexo在github上部署的只是静态页面，并没有推送源文件，这样�
    git push #推送本地笔记源文件到远程
    ```
 
+## 5.1备份github博客源文件到树莓派
+
+```shell
+git clone git@github.com:LjessonS/LjessonS.github.io.git
+git checkout hexo
+git remote add pi ssh://git@example.com:8084/home/git/blog/hexo.git
+git push pi :hexo #删除树莓派上原有的hexo分支
+git push pi  #将git仓库上的hexo分支推送到树莓派上
+#接下来修改树莓派上的站点配置文件和url，让其指向树莓派git仓库
+hexo clean && hexo d -g #打开https://example.com:8082/查看是否部署成功
+#再提交对hexo分支的修改到树莓派上
+```
+
+
+
 参考链接：
 
 1. https://zhuanlan.zhihu.com/p/26625249
