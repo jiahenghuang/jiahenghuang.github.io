@@ -17,7 +17,8 @@ sitemap:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://LjessonS.github.io
+#url: https://LjessonS.github.io
+url: http://192.168.0.103
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults: 
@@ -105,5 +106,6 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:LjessonS/LjessonS.github.io.git
+  repo: ssh://git@lewelab.com:10247/home/git/blog/hexo.git
+  #repo: git@github.com:LjessonS/LjessonS.github.io.git
   branch: master  
