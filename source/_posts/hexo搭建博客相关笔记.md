@@ -18,5 +18,6 @@ categories: hexo
 
   1. `npm config set registry https://registry.npm.taobao.org`
   2. `#清除缓存：npm cache clean --force`
+  3. `npm install`安装成功后，即可使用`hexo clean`命令了
 
   参见https://juejin.im/post/5a804a926fb9a0634c266c31
