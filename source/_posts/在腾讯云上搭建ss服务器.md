@@ -57,15 +57,95 @@ $ ssserver -c shadowsocks.json -d start
 $ curl icanhazip.com
 ```
 
+# 4.在linux系统中配置ss客户端
+
+​	shadowsocks使用的协议是socks，而proxy所发出的代理是http协议，要让两者能够通讯，就要使用Privoxy，Privoxy是一个轻量的代理服务器，与之相似的还有Squid等，不过Privoxy比较简单易用。
+
+![](在腾讯云上搭建ss服务器/20180923143627.png)
+
+## 4.1配置privoxy
+
+```shell
+$ sudo apt-get install privoxy #注，有些人用yum -y install privoxy,对于ubuntu而言，默认软件包管理器不是yum，而是dpkg，因此安装软件时要用 apt-get 来替换 yum 安装
+$ vim shadowsocks.json
+{
+    "server":"SERVER-IP",           # 你的服务器ip
+    "server_port":PORT,             # 服务器端口
+    "local_address": "127.0.0.1",   # 本地ip
+    "local_port":1080,              # 本地端口
+    "password":"PASSWORD",          # 连接 ss 密码
+    "timeout":300,                  # 等待超时
+    "method":"chacha20",            # 加密方式
+    "fast_open": false,             # tcp_fastopen
+    "workers": 1                    #工作线程数
+}
+$ echo 'forward-socks5 / 127.0.0.1:1080 .' >> /etc/privoxy/config
+#有些人自定义了pac.action,但是我使用这种方式，用curl www.google.com命令来验证的时候，发现结果返回特别慢（actionsfile pac.action forward-socks5 / 127.0.0.1:1080 .）
+
+#设置privoxy监听端口
+$ vim /etc/profile
+# privoxy 默认监听端口为 8118,添加一下内容
+proxy="http://127.0.0.1:8118"
+export http_proxy=$proxy
+export https_proxy=$proxy
+
+
+#启动shadowsocks代理
+$ sslocal -c shadowsocks.json
+# 启动privoxy服务
+$ service privoxy start #sudo /etc/init.d/privoxy start
+```
+
+## 4.2安装genpac
+
+这一步应该不需要
+
+[gfw.action](https://raw.githubusercontent.com/cckpg/autoproxy2privoxy/master/gfw.action)
+
+```shell
+# 从gfwlist生成代理信息为SOCKS5 127.0.0.1:1080的PAC文件
+genpac --format=pac --pac-proxy="SOCKS5 127.0.0.1:1080" -o autoproxy.pac
+#后期更新pac文件可使用
+# PAC格式 如果在线gfwlist获取失败使用本地文件，如果在线gfwlist获取成功更新本地gfwlist文件
+$ genpac --format=pac --pac-proxy="SOCKS5 127.0.0.1:1080" --gfwlist-local=~/gfwlist.txt --gfwlist-update-local -o autoproxy.pac
+```
+
+## 4.3验证端口
+
+```shell
+# 验证Shadowsocks
+$ netstat -an | grep 1080
+# 1080是Shadowsocks服务的端口号
+# 如果出现以下，则说明服务正常
+tcp        0      0 127.0.0.1:1080          0.0.0.0:*               LISTEN     
+udp        0      0 127.0.0.1:1080          0.0.0.0:* 
+
+# 验证Privoxy
+$ netstat -an | grep 8118
+# 8118是Privoxy服务的端口号
+# 如果出现以下，则说明服务正常
+tcp        0      0 192.168.1.163:8118      0.0.0.0:*               LISTEN 
+```
+
+## 4.4验证ss客户端是否配置
+
+```shell
+$ curl www.google.com #不要用ping，出现以下内容说明配置成功，以后终端也能科学上网了
+<!doctype html><html itemscope="" itemtype="http://schema.org/WebPage" lang="en"><head><meta content="Search the world's information, including webpages, images, videos and more. Google has many special features to help you find exactly what you're looking for." name="description"><meta content="noodp" name="robots"><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><meta content="/logos/doodles/2018/fall-equinox-2018-4647428262199296-law.gif" itemprop="image"><meta content="Fall Equinox 2018" property="twitter:title"><meta content="Fall Equinox 2018! #GoogleDoodle" 
+```
+
 参考链接：
 
 - [搭建ss服务器和配置ss客户端](https://blog.csdn.net/hereis00/article/details/79552003)
 - [用Linux命令行获取本机外网IP地址](https://blog.csdn.net/lakeheart879/article/details/78247894)
 
-在linux上使用命令行走pac模式的技术**待续**
+在linux上使用命令行走pac模式的技术
 
 - [Ubuntu 16.04 安装ss客户端](https://blog.csdn.net/thor_w/article/details/79504804)
 - [centos7 安装shadowsocks客户端](https://blog.csdn.net/guyan0319/article/details/72681796)
-- [centos7 安装shadowsocks客户端](https://blog.csdn.net/guyan0319/article/details/72681796)
+- [sslocal + privoxy 实现 PAC 代理](https://blog.sliang.xyz/2017/12/12/sslocalprivoxy-%E5%AE%9E%E7%8E%B0-pac-%E4%BB%A3%E7%90%86/)
+- [强大的代理调度器代理Privoxy](https://www.igfw.net/archives/1178)
+- [用SS+Privoxy+树莓派让Node爬虫科学上网](https://segmentfault.com/a/1190000009251798)
 - [Centos + Shadowsocks客户端 + Privoxy实现外网访问](http://exp-blog.com/2018/07/04/pid-1591/)
 - [VPS一键搭建PAC代理服务器脚本，比SS翻墙更简单](http://www.glseo.cc/post-103.html)
+- [Shadowsocks-qt5+gfwlist(genpac)设置Deebin(Linux)PAC全局代理](https://blog.csdn.net/sos218909/article/details/78781017)
