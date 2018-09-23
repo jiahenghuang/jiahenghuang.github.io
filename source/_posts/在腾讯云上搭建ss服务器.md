@@ -40,6 +40,8 @@ $ vim shadowsocks.json
 $ ssserver -c shadowsocks.json -d start
 ```
 
+<!--more-->
+
 # 2.客户端配置
 
 貌似在官网[shadowsocks](https://shadowsocks.org/en/index.html)下载适合不同系统的安装方式，这个我没试，用的是以前的客户端。
