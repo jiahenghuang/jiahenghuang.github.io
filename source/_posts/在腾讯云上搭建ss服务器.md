@@ -106,7 +106,15 @@ $ pip install gfwlist2privoxy
 $ gfwlist2privoxy -f pac.action -p 127.0.0.1:1080 -t socks5
 $ vim /etc/privoxy/config #将原来的"forward-socks5 / 127.0.0.1:1080 ."注释掉，修改为下面的内容
 actionsfile pac.action
+
+#上面是通过默认地址将在线的gfwlist转换为pac.action的，若是在线的无法下载那就需要手动下载gfwlist了
+$ wget https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
+$ gfwlist2privoxy -i gfwlist.txt -f pac.action -p 127.0.0.1:1080 -t socks5
+#网上还有将gfwlist转换为pac格式的，猜测这可能是给windows客户端用的
+#gfwlist2pac -i gfwlist.txt -f -gfwlist.js -p "SOCKS5 127.0.0.1:1080;"
 ```
+
+参见：[ss自动更新PAC无效解决](https://www.jianshu.com/p/8046e9930705)
 
 ## 4.3验证端口
 
