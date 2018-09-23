@@ -80,7 +80,7 @@ $ vim shadowsocks.json
     "workers": 1                    #工作线程数
 }
 $ echo 'forward-socks5 / 127.0.0.1:1080 .' >> /etc/privoxy/config
-#有些人自定义了pac.action,但是我使用这种方式，用curl www.google.com命令来验证的时候，发现结果返回特别慢（actionsfile pac.action forward-socks5 / 127.0.0.1:1080 .）
+#有些人自定义了pac.action,但是我使用这种方式，用curl www.google.com命令来验证的时候，发现结果返回特别慢（actionsfile pac.action）
 
 #设置privoxy监听端口
 $ vim /etc/profile
@@ -96,18 +96,14 @@ $ sslocal -c shadowsocks.json
 $ service privoxy start #sudo /etc/init.d/privoxy start
 ```
 
-## 4.2安装genpac
-
-这一步应该不需要
-
-[gfw.action](https://raw.githubusercontent.com/cckpg/autoproxy2privoxy/master/gfw.action)
+## 4.2安装gfwlist2privoxy
 
 ```shell
-# 从gfwlist生成代理信息为SOCKS5 127.0.0.1:1080的PAC文件
-genpac --format=pac --pac-proxy="SOCKS5 127.0.0.1:1080" -o autoproxy.pac
-#后期更新pac文件可使用
-# PAC格式 如果在线gfwlist获取失败使用本地文件，如果在线gfwlist获取成功更新本地gfwlist文件
-$ genpac --format=pac --pac-proxy="SOCKS5 127.0.0.1:1080" --gfwlist-local=~/gfwlist.txt --gfwlist-update-local -o autoproxy.pac
+# 将在线的gfwlist转换为privoxy能用的格式，可用于更新privoxy的代理规则
+$ pip install gfwlist2privoxy
+$ gfwlist2privoxy -f pac.action -p 127.0.0.1:1080 -t socks5
+$ vim /etc/privoxy/config #将原来的"forward-socks5 / 127.0.0.1:1080 ."注释掉，修改为下面的内容
+actionsfile pac.action
 ```
 
 ## 4.3验证端口
@@ -144,6 +140,7 @@ $ curl www.google.com #不要用ping，出现以下内容说明配置成功，�
 - [Ubuntu 16.04 安装ss客户端](https://blog.csdn.net/thor_w/article/details/79504804)
 - [centos7 安装shadowsocks客户端](https://blog.csdn.net/guyan0319/article/details/72681796)
 - [sslocal + privoxy 实现 PAC 代理](https://blog.sliang.xyz/2017/12/12/sslocalprivoxy-%E5%AE%9E%E7%8E%B0-pac-%E4%BB%A3%E7%90%86/)
+- [将GFWList转换为Privoxy格式的文件](https://my.oschina.net/pfma/blog/870729)
 - [强大的代理调度器代理Privoxy](https://www.igfw.net/archives/1178)
 - [用SS+Privoxy+树莓派让Node爬虫科学上网](https://segmentfault.com/a/1190000009251798)
 - [Centos + Shadowsocks客户端 + Privoxy实现外网访问](http://exp-blog.com/2018/07/04/pid-1591/)
