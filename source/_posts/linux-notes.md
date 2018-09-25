@@ -144,29 +144,32 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
 - linux文件权限表示及查看修改方法
 
   > 所有者(user)、群组(group)、其他人(other):
-  > 	-rw-rw-r--
-  > 	第一个rw- 代表的是所有者（user）拥有的权限
-  > 	第二个rw 代表的是组群（group）拥有的权限
-  > 	最后那个r--代表的是其他人（other）拥有的权限
+  > ​	-rw-rw-r--
+  > ​	第一个rw- 代表的是所有者（user）拥有的权限
+  > ​	第二个rw 代表的是组群（group）拥有的权限
+  > ​	最后那个r--代表的是其他人（other）拥有的权限
   > 文件权限表示：
-  > 	r 表示文件可以被读（read）
-  > 	w 表示文件可以被写（write）
-  > 	x 表示文件可以被执行（如果它是程序的话）
-  > 	- 表示相应的权限还没有被授予
+  > ​	r 表示文件可以被读（read）
+  > ​	w 表示文件可以被写（write）
+  > ​	x 表示文件可以被执行（如果它是程序的话）
+  > ​	- 表示相应的权限还没有被授予
   > 文件权限查看：
-  > 	如果有文件夹  /a/b/c
-  > 	那么执行 ls -l /a/b 查看权限的文件并不是b，而是查看的c的权限。
-  > 	ls -l /a 查看的是b文件的权限
-  > 	ls -l /a/b 查看的是c文件的权限
-  > 	ls -l /a/b/c 查看的是c文件的权限
+  > ​	如果有文件夹  /a/b/c
+  > ​	那么执行 ls -l /a/b 查看权限的文件并不是b，而是查看的c的权限。
+  > ​	ls -l /a 查看的是b文件的权限
+  > ​	ls -l /a/b 查看的是c文件的权限
+  > ​	ls -l /a/b/c 查看的是c文件的权限
   > 文件权限修改方法：
-  > 	使文件可以直接执行的命令：chmod +x filename
-  > 	使所有用户对目录都有读写权限：sudo chmod ugo+rw /opt
-  > ln命令：
-  > 	ln是linux中又一个非常重要命令，它的功能是为某一个文件在另外一个位置建立一个
-  > 	同步的链接.当我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要
-  > 	的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后
-  > 	在 其它的目录下用ln命令链接（link）它就可以，不必重复的占用磁盘空间。
+  > ​	使文件可以直接执行的命令：chmod +x filename
+  > ​	使所有用户对目录都有读写权限：sudo chmod ugo+rw /opt
+
+- 永久性删除用户账号
+
+  ```shell
+  $ userdel peter
+  $ sudo rm -rf /home/peter
+  $ groupdel peter
+  ```
 
 - tail -n 1000 filename：显示文件最后1000行
 
@@ -294,6 +297,21 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
 
   参见[Linux split 大文件分割与 cat合并文件](https://itbilu.com/linux/man/Nkz2hoeNm.html)
 
+- 在某个路径下查找文件
+
+  ```shell
+  $ find ./ -name z7zip.sh #查找某个具体的文件名
+  $ find ./ -name z7zip* #使用通配符查找
+  #如果总是在当前路径下查找，可以加为在~/.bashrc中加入一个alias
+  #alias find_by_name='find ./ -name',这样就可以使用find_by_name filename的方式查找文件所在路径了
+  ```
+
+- 重启ssh服务
+
+  ```shell
+  $ service sshd restart
+  ```
+
 ## 4.ubuntu使用中的一些问题
 
 ### 4.1 解决语言设置错误的问题
@@ -301,20 +319,20 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
 参考：（http://wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed）
 
 > perl: warning: Falling back to the standard locale ("C").
-> 	安装 localepurge 管理语言文件
-> 	sudo apt-get install localepurge
-> 	选择我们想要的语言，例如 en_US.UTF-8 和 zh_CN.UTF-8。
-> 	当然也可以使用以下命令再次进行配置：
-> 	sudo dpkg-reconfigure localepurge
-> 	生成自己想要的语言
-> 	sudo locale-gen zh_CN.UTF-8 en_US.UTF-8
-> 	打印出当前的配置信息
-> 	locale
-> 	到此，搞定！！！
-> 	默认情况下终端 ssh 的时候会将本地的 locale 传到服务器中，可以通过命令指定 ssh 服务器的语言：LC_ALL=en_US.UTF-8 ssh bgi902@172.16.56.201
+> ​	安装 localepurge 管理语言文件
+> ​	sudo apt-get install localepurge
+> ​	选择我们想要的语言，例如 en_US.UTF-8 和 zh_CN.UTF-8。
+> ​	当然也可以使用以下命令再次进行配置：
+> ​	sudo dpkg-reconfigure localepurge
+> ​	生成自己想要的语言
+> ​	sudo locale-gen zh_CN.UTF-8 en_US.UTF-8
+> ​	打印出当前的配置信息
+> ​	locale
+> ​	到此，搞定！！！
+> ​	默认情况下终端 ssh 的时候会将本地的 locale 传到服务器中，可以通过命令指定 ssh 服务器的语言：LC_ALL=en_US.UTF-8 ssh bgi902@172.16.56.201
 
 解决ubuntu bash中文乱码的问题:
-	http://nekomiao.me/2016/08/23/ubuntu-zh-CN/	
+​	http://nekomiao.me/2016/08/23/ubuntu-zh-CN/	
 
 查看linux是32位还是64位的（[五种方法检测你的 Linux 是32位还是64位](https://linux.cn/article-3048-1.html)）
 

@@ -58,6 +58,15 @@ http://o-u-u.com/?p=2015&pn=%E5%9C%A8eclipse%E4%B8%AD%E4%BD%BF%E7%94%A8pydev%E6%
   - 特殊情况下：C:\Users\ls\AppData\Local\conda\conda\envs\py2
     在Eclipse中进行如下设置：	window——>preferences——>pydev——>Interpreters——>python Interpreters
 
+- 在局域网中访问服务器中的jupyter-notebook
+
+  ```shell
+  $ jupyter-notebook --no-browser --port=8088
+  $ jupyter-notebook list # 可以列出目前已经开启的jupyternotebook 
+  $ ssh -N -f -L localhost:8088:localhost:8088 username@192.168.0.7 # port transplant to local 
+  #在浏览器中打开输入token:ee6b64a4eadf656de198a5b9470b8aa8e2df55af69978399，即可打开服务器中的jupyternotebook
+  ```
+
 # 2.常用操作
 
 - 如何从列表中随机抽取元素

@@ -86,3 +86,10 @@ git的常用命令
    $ export GIT_EDITOR=vim #在.bashrc中添加
    $ source .bashrc
    ```
+
+4. 暂存工作区（https://blog.csdn.net/daguanjia11/article/details/73810577）
+
+   ```shell
+   $ git stash #保存当前工作进度，会把暂存区和工作区的改动保存起来。
+   $ git stash pop #恢复最新的进度到工作区。git默认会把工作区和暂存区的改动都恢复到工作区。
+   ```

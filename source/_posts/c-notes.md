@@ -5,7 +5,7 @@ tags: [c++, notes]
 categories: c++
 ---
 
-## 1. vs调试时如何显示输出窗口
+# 1. vs调试时如何显示输出窗口
 
 在代码中加上如下预处理命令
 
@@ -14,7 +14,7 @@ categories: c++
 __P__ （放到main里面）
 ```
 
-### 2. c++ ios::base用法
+# 2. c++ ios::base用法
 
 > 1. 凡包含std::ios_base::out mode的操作方式，如果文件不存在都是会创建.
 >
@@ -45,7 +45,7 @@ string fcout(const string & fn, const string & fc, const std::ios::openmode & F_
 
 <!--more-->
 
-### 3. gdb调试
+# 3. gdb调试
 
 - gdb输出map元素大小写法
 
@@ -65,7 +65,7 @@ it.operator*().second.size();
   ```
 
 
-### 4.将c中的char数组转换为整数类型
+# 4.将c中的char数组转换为整数类型
 
 ```c
 char myarray[5] = {'-', '1', '2', '3', '\0'};
@@ -75,7 +75,7 @@ sscanf(myarray, "%d", &i);
 
 参考：[Convert char array to a int number in C](https://stackoverflow.com/questions/10204471/convert-char-array-to-a-int-number-in-c?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
 
-### 5.vector操作
+# 5.vector操作
 
 - 实现c++ vector的二分查找（参见：[Using Binary Search with Vectors](https://stackoverflow.com/questions/18774858/using-binary-search-with-vectors?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)）
 
@@ -134,7 +134,7 @@ int main() {
 }
 ```
 
-### 6. c/c++ cpu_time和wall_time实现
+# 6. c/c++ cpu_time和wall_time实现
 
 ```c
 #include <iostream>
@@ -180,14 +180,14 @@ int main(){
 }
 ```
 
-### 7. 判断是否为无穷
+# 7. 判断是否为无穷
 
 ```c
 #include<math.h>
 isfinite(x)
 ```
 
-### 8. m个字符的n元素的组合-基于位移实现
+# 8. m个字符的n元素的组合-基于位移实现
 
 ```c
 //如输入为碱基A、C、G、T，输出为"AA", "AC", "AG", "AT"。。。即相当于依次在两个盒子中分别有放回的取出一个字符放在两个盒子中。共有2^4种可能，将每一种可能都看成对应的二进制的，2个bit存储一个碱基，于是2^4种可能对应着0-(2^4-1)的2^4种二进制表示。再将A,C,G,T的vector的索引看成二进制，于是得到的2个bit就可以用来取出vector中对应的碱基。
@@ -233,7 +233,7 @@ int main(){
 }
 ```
 
-### 9. 在c语言中调用系统命令判断文件是否存在并删除文件
+9. 在c语言中调用系统命令判断文件是否存在并删除文件
 
 ```c
 if( access( "/mnt/hgfs/VM_Share/c_read.txt", F_OK ) != -1 )
@@ -245,7 +245,7 @@ if( access( "/mnt/hgfs/VM_Share/c_read.txt", F_OK ) != -1 )
 //Note that on Windows, you can't use W_OK to reliably test for write permission, since the access function does not take DACLs into account. access( fname, W_OK ) may return 0 (success) because the file does not have the read-only attribute set, but you still may not have permission to write to the file.
 ```
 
-### 10.int转无符号整数取绝对值
+# 10.int转无符号整数取绝对值
 
 ```c++
 #include <limits.h>
@@ -266,7 +266,7 @@ int main(void) {
 }
 ```
 
-### 11.c/c++在linux上的环境准备
+# 11.c/c++在linux上的环境准备
 
 - clion安装与卸载(http://www.voidcn.com/article/p-evedqfrg-kd.html)
 
@@ -324,6 +324,57 @@ https://askubuntu.com/questions/829310/how-to-upgrade-cmake-in-ubuntu/829311
 
   [fatal error: zlib.h & lzma.h : No such file or directory ](https://blog.csdn.net/digent1/article/details/9467739)
 
+# 12.函数模板
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+template<typename T> T** arr2dAlloc(const int & n, const int & m)
+{
+    T** var = NULL;
+    var = new T*[n];
+    assert(NULL != var);
+    for (int ii = 0; ii < n; ii++)
+    {
+        var[ii] = NULL;
+        var[ii] = new T[m];
+        assert(NULL != var[ii]);
+    }
+    return var;
+}
+
+int main(){
+#if 1 //test_
+    int n = 3;
+    int m = 3;
+    int** a = arr2dAlloc<int>(n, m); //注意函数名后的类型,如何分配
+    double** b = arr2dAlloc<double>(n, m);
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            b[i][j] = 1.0;
+        }
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cout << a[i][j] << endl;
+            cout << b[i][j] << endl;
+        }
+    }
+
+    free2dArr(a, n);
+    free2dArr(b, n);
+
+#endif
+}
+```
 
 
 
@@ -333,5 +384,4 @@ https://askubuntu.com/questions/829310/how-to-upgrade-cmake-in-ubuntu/829311
 
 
 
-
-		
+​		
