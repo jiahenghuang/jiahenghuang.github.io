@@ -106,6 +106,6 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: ssh://git@lewelab.com:10247/home/git/blog/hexo.git
-  #repo: git@github.com:LjessonS/LjessonS.github.io.git
-  branch: master  
+  repo:
+      pi: ssh://git@lewelab.com:10247/home/git/blog/hexo.git,master
+      github: git@github.com:LjessonS/LjessonS.github.io.git,master  
