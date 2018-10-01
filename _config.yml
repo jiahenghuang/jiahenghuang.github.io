@@ -18,7 +18,8 @@ sitemap:
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 #url: https://LjessonS.github.io
-url: http://192.168.0.103
+#url: http://192.168.0.103
+url: http://algoers.com:10244/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults: 
@@ -107,5 +108,5 @@ theme: next
 deploy:
   type: git
   repo:
-      pi: ssh://git@lewelab.com:10247/home/git/blog/hexo.git,master
+      pi: ssh://git@algoers.com:10247/home/git/blog/hexo.git,master
       github: git@github.com:LjessonS/LjessonS.github.io.git,master  
