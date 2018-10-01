@@ -113,6 +113,10 @@ ls@DESKTOP-OV3HILK MINGW64 /d/hexo (hexo)$ git remote add origin git@192.168.0.1
 ls@DESKTOP-OV3HILK MINGW64 /d/hexo (hexo)$ git push origin hexo
 #部署博客到树莓派git服务器
 ls@DESKTOP-OV3HILK MINGW64 /d/hexo (hexo)$ hexo clean && hexo d -g
+#自动化部署
+ls@DESKTOP-OV3HILK MINGW64 /d/hexo (hexo)$ vim ~/.bashrc
+#git push默认推送当前hexo分支,git add --all可以将其他文件夹的改动也暂存起来
+alias myhexod='git add --all; git commit; git push; hexo clean && hexo d -g;'
 ```
 
 完成上面的步骤后，打开就可以看到hexo的 hello world了，主题有点不正常，不过问题不大，后面继续优化就是了

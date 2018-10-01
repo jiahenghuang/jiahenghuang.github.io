@@ -110,3 +110,4 @@ deploy:
   repo:
       pi: ssh://git@algoers.com:10247/home/git/blog/hexo.git,master
       github: git@github.com:LjessonS/LjessonS.github.io.git,master  
+      aliyun: ls@39.108.3.14:/home/ls/blog/hexo.git,master  
