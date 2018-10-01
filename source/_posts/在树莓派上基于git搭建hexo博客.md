@@ -67,8 +67,10 @@ server{
 }
 ...
 
-#重启Nginx
-git@raspberrypi:~/blog $ sudo service nginx restart
+#启动Nginx
+git@raspberrypi:~/blog $ sudo service nginx start
+#查看nginx运行的端口
+git@raspberrypi:~/blog $ sudo netstat -anp | grep nginx
 ```
 
 # 4. 本地配置hexo
