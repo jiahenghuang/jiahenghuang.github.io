@@ -69,7 +69,16 @@ $ Typora.exe linux-notes.md #事先已经将typora添加进系统环境变量
 ## 3.命令的使用
 
 - mv命令的使用，移动多个文件到目标文件夹 mv -t DESTINATION file1 file2 file3
+
 - rm命令的使用，删除文件夹 rm -rf folderName, incase  doesn't have permission:sudo rm -rf folderName.
+
+  - 排除特定文件删除
+
+    ```shell
+    #下面的命令不会删除含有zh字符的文件
+    $ rm `ls | grep -v "zh"`
+    ```
+
 - unzip命令解压缩文件（参考：http://blog.csdn.net/shenyunsese/article/details/17556089）
 
 ```shell
@@ -310,6 +319,13 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
 
   ```shell
   $ service sshd restart
+  ```
+
+- find命令
+
+  ```shell
+  #查找包含某个关键字的所有文件
+  $ find /root/ -type f | xargs grep "www"
   ```
 
 ## 4.ubuntu使用中的一些问题

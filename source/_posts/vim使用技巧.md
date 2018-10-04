@@ -119,6 +119,7 @@ categories: vim
 > - [c 上一个差异点
 > - 按`dp`复制当前文件的内容到另一个文件
 > - 按`do`复制另一个文件的内容到当前文件
+> - 在两个文件间跳转:`ctrl-w-w`
 
 6. 设置自动折行(https://blog.csdn.net/songbohr/article/details/5098855)
 
