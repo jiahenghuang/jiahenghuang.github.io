@@ -93,12 +93,12 @@ plugin:
 - hexo-generator-sitemap
 - hexo-generator-baidu-sitemap
 
-math:
-  engine: 'mathjax' # or 'katex'
-  mathjax:
-    # src: custom_mathjax_source
-    config:
-      # MathJax config
+  #math:
+  #  engine: 'mathjax' # or 'katex'
+  #  mathjax:
+  #    # src: custom_mathjax_source
+  #    config:
+  #      # MathJax config
 ## Themes: https://hexo.io/themes/
 #theme: landscape
 theme: next

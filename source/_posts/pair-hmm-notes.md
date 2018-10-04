@@ -1,13 +1,14 @@
 ---
 title: pair Hmm notes
 date: 2018-4-29 16:48:52
+mathjax: true
 tags: 
 - hmm
 - 生物信息
 categories: [生物信息,算法]
 ---
 
-#pair Hmm学习笔记
+# pair Hmm学习笔记
 
 计划：
 
@@ -35,7 +36,7 @@ $$
 
 (b)证明(1)式等价于
 $$
-\theta^{g+1}=arg\max\limits_{\theta}(\int\limits_Zlog(p(X,Z|\theta))p(Z,X|\theta^g)dZ)\;(1)
+\theta^{g+1}=arg\max\limits_{\theta}(\int\limits_Zlog(p(X,Z|\theta))p(Z,X|\theta^g)dZ)\;(2)
 $$
 (1)证明：
 $$

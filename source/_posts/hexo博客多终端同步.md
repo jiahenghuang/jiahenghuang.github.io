@@ -41,7 +41,7 @@ url = ssh://git@example2.com:8083/home/git/blog/hexo.git
 ```shell
 #通过命令行的方式,本质上也是修改的.git/config配置文件
 $ git remote add web ssh://git@example1.com:8083/home/git/blog/hexo.git
-$ git remote set-url --add ssh://git@example2.com:8083/home/git/blog/hexo.git
+$ git remote set-url --add web ssh://git@example2.com:8083/home/git/blog/hexo.git
 $ git push all --all
 ```
 
