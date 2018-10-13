@@ -19,6 +19,9 @@ $ alias #可通过该命令查看系统中变量别名
 $ vim ~/.bashrc #为常用工作路径添加别名，方便直接进入
 alias gss='cd /d/share/work/codeSpace/git/LjessonS.github.io/source/_posts'
 alias ...='cd ..' #输入...直接能进入上层目录
+alias wget='wget -c' #-c参数表示断点续传
+alias getpass="openssl rand -base64 20" #为新的网络账户生成随机的20个字符的密码
+alias ping='ping -c 5' #限制ping在5个之内
 $ source ~/.bashrc #让别名生效
 ```
 
