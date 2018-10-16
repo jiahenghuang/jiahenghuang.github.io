@@ -316,6 +316,11 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
   $ find ./ -name z7zip* #使用通配符查找
   #如果总是在当前路径下查找，可以加为在~/.bashrc中加入一个alias
   #alias find_by_name='find ./ -name',这样就可以使用find_by_name filename的方式查找文件所在路径了
+  #查找包含某个关键字的所有文件
+  $ find /root/ -type f | xargs grep "www"
+  
+  #跟踪链接（当文件是一个软链接时，没有L参数是不会有返回路径的，加上L参数就能找到软链接的文件路径）
+  find -L /home/username -name filename
   ```
 
 - 重启ssh服务
@@ -324,12 +329,17 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
   $ service sshd restart
   ```
 
-- find命令
+- qdel与qstat
 
   ```shell
-  #查找包含某个关键字的所有文件
-  $ find /root/ -type f | xargs grep "www"
+  #查看任务
+  qstat -u username
+  #杀掉某个用户全部的队列任务
+  qdel -u username
+  #杀掉某个单独id的任务
+  qdel id
   ```
+
 
 ## 4.ubuntu使用中的一些问题
 

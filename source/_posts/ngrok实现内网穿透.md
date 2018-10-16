@@ -160,6 +160,22 @@ $ nohup sudo sh ngrok.sh #同上，经测试关闭secureCRT,仍能远程访问�
 $ git clone ssh://git@example.com:8084/home/git/blog/hexo.git
 ```
 
+# 7.ngrok同时开启多个http端口
+
+​	如果有其他人跟你公用同一台云服务器，如何做到用同一个域名加上不同的端口号访问各自的站点呢？
+
+经过试验发现，ngrokd并没有参数支持一次开启多个http端口。但是仍旧可以这么做，不同的端口在后台开启一个ngrokd的服务。
+
+```shell
+./ngrokd -tlsKey=server.key -tlsCrt=server.crt -domain=xxx.com tunnelAddr=:4440 -httpAddr=:port1 -httpsAddr=:port2
+./ngrokd -tlsKey=server.key -tlsCrt=server.crt -domain=xxx.com -tunnelAddr=:4441 -httpAddr=:port3 -httpsAddr=:port3
+#注：httpAddr和httpsAddr两个参数均要指定，因为不指定的话，会使用默认值，这样同时挂起在后台时，就会出现端口冲突
+```
+
+
+
+
+
 参考：
 
 - [Ngrok编译](https://my.oschina.net/dingdayu/blog/1525454)

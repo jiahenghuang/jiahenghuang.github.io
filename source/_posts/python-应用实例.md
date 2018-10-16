@@ -272,10 +272,15 @@ True
 - python调用外部程序
 
 ```python
-#使用os模块调用ls命令
+#使用os模块调用ls命令，os.system不能获取系统返回值，而os.popen可以
 >>> import os
->>> os.system('ls')
+>>> a = os.system('ls')
 1.txt            baqtools.cpp             bgitools.cpp       exc.e.bak  globalb.cpp                    grptools.hpp [...]
+>>> a
+0
+>>> a = os.popen('ls').read().strip()
+>>> for b in a:
+    print(b)
 ```
 
 - python多进程

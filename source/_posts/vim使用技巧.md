@@ -26,7 +26,11 @@ categories: vim
    :%s/foo/bar/g #在普通模式中输入,这个命令会将文内所有foo替换为bar
    :%s/^/要插入的字符串 #每行的行首都添加一个字符串
    :%s/$/要插入的字符串 #每行的行尾都添加一个字符串
+   :%s/\#.*//g #删除 # 之后所有字符
+   :g/^$/d #删除空行,":g"表示对整个文件进行操作，“d”表示删除。完整的语法是：:[range]global[!]/{pattern}/{command}，可以理解成，在 range 范围内匹配 patter 的行执行 Ex command
    ```
+
+   参见：[Vim 全局命令 g](http://einverne.github.io/post/2017/10/vim-global.html)
 
 3. 跳转
 
@@ -133,6 +137,11 @@ categories: vim
 
    在`~/.vimrc`文件中添加`set fileencodings=utf-8`
 
+8. 设置显示tab键
+
+   ```shell
+   :set list #也可以显示其他符号，如末尾的换行符
+   ```
 
 
 
