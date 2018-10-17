@@ -25,6 +25,8 @@ alias ping='ping -c 5' #限制ping在5个之内
 $ source ~/.bashrc #让别名生效
 ```
 
+<!--more-->
+
 ## 2.创建博客自动用编辑器打开markdown文件
 
 在站点根目录scripts文件夹，若没有则创建一个，然后在scripts文件夹中创建一个auto_open.js的脚本文件
@@ -80,6 +82,9 @@ $ Typora.exe linux-notes.md #事先已经将typora添加进系统环境变量
     ```shell
     #下面的命令不会删除含有zh字符的文件
     $ rm `ls | grep -v "zh"`
+    #排除多个文件
+    $ rm -rf `ls | grep -v -P '^chr.*\.fa$|hg19\.fa$'`
+    $ rm -rf `ls | egrep -v '^chr.*\.fa$|hg19\.fa$'` #或使用egrep
     ```
 
 - unzip命令解压缩文件（参考：http://blog.csdn.net/shenyunsese/article/details/17556089）
@@ -339,6 +344,24 @@ $ unzip myfile.zip #把myfile解压到当前目录，不删除myfile.zip文件
   #杀掉某个单独id的任务
   qdel id
   ```
+
+- screen
+
+  **作用**
+
+  1. 可以实现多个“屏幕”的效果。
+  2. 可以实现类似“后台执行”的效果，避免远程终端窗口中执行长时间任务时意外断开
+  3. 可以远程共享字符界面会话，就像远程桌面一样，两个人看到的画面一样，只不过screen是字符界面,而且有一个前提是，两个人必须登录同一台主机的同一个用户。
+
+  ```shell
+  screen -S idname #创建会话
+  screen -ls #可以显示已经建立的screen会话
+  screen -x idname #加入会话 不管这个会话是处于Attached状态还是Detached状态，都可以使用此命令加入。
+  screen -d idname #跳出会话（或使用快捷键ctrl+a+d），让会话后台运行,在会话中输入exit命令会让该会话退出(该会话在进程中会消失)
+  ```
+
+  参见：[screen命令详解 linux中的"远程神器"](http://blog.51cto.com/zz6547/1829625)
+
 
 
 ## 4.ubuntu使用中的一些问题

@@ -334,9 +334,9 @@ def process_info():
     return info
 ```
 
-- 判断文件或文件夹是否存在
+- 文件操作
 
-```python
+```shell
 #判断文件是否存在	
 >>> import os
 >>> os.path.exists(test_file.txt)
@@ -351,6 +351,11 @@ def process_info():
 
 >>> os.path.exists(no_exist_dir)
 #False
+
+$ ls #其中t1，t2是文件夹
+generateRealnSamByGATK.sh main.e  main.o t1  t2 
+>>> os.listdir("./") #既可以列出文件，也可以列出文件夹
+['main.e', 'generateRealnSamByGATK.sh', 't2', 'main.o', 't1']
 ```
 
 - linux服务器绘图报错：RuntimeError: Invalid DISPLAY variable
@@ -386,3 +391,49 @@ def extract_docs(texts, isTrain = True):
         return docs
 ```
 
+- 获取文件绝对路径
+
+  ```shell
+  $ ls -l
+  total 0
+  -rw-rw-r-- 1 guest guest 0 Jun 16 08:36 a
+  lrwxrwxrwx 1 guest guest 1 Jun 16 08:36 b -> a
+  
+  $ python
+  Python 2.7.11 (default, Dec 15 2015, 16:46:19) 
+  [GCC 4.8.4] on linux2
+  Type "help", "copyright", "credits" or "license" for more information.
+  
+  >>> from os.path import abspath, realpath
+  
+  >>> abspath('b')
+  '/home/guest/play/paths/b'
+  
+  >>> realpath('b')
+  '/home/guest/play/paths/a' #realpath能够获取到软链接所在的路径
+  ```
+
+- python调试
+
+  1. 在代码中使用pdb
+
+     ```shell
+     $ vim test.py
+     import pdb
+     
+     pdb.set_trace() #相当于在下一行设置了断点
+     print("hello world!")
+     
+     $ python test.py #命令行直接运行就能停在第5行
+     ```
+
+  2. 直接在命令行设置断点参数
+
+     ```shell
+     $ vim test.py
+     import os
+     
+     os.listdir("./")
+     
+     $ python -m pdb test.py #进入第一行就开始调试
+     ```

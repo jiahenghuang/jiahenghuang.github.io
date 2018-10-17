@@ -7,7 +7,7 @@ categories: shell
 
 linux中必会的语法
 
-## 1. shell如何设置默认参数
+# 1. shell如何设置默认参数
 
 ```shell
 $ cat > test.sh
@@ -23,7 +23,7 @@ $ sh test.sh 0
 
 参考：[shell默认参数](https://blog.csdn.net/lsjseu/article/details/51492278)
 
-## 2. 数组的声明与定义
+# 2. 数组的声明与定义
 
 ```shell
 #!/bin/bash
@@ -38,7 +38,7 @@ done
 
 参考：[How to initialize a bash array with output piped from another command?](https://stackoverflow.com/questions/971162/how-to-initialize-a-bash-array-with-output-piped-from-another-command?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
 
-## 3. shell判断文件或文件夹是否存在
+# 3. shell判断文件或文件夹是否存在
 
 ```shell
 if [ -d $filename ]; then echo "True"; fi #-d 判断文件夹是否存在
@@ -46,7 +46,7 @@ if [ -f $filename ]; then echo "True"; fi #-f 判断文件是否存在
 if [ ! -f $filename ]; then echo "False"; fi #判断文件是否不存在
 ```
 
-## 4. 生成等差数列
+# 4. 生成等差数列
 
 ```shell
 $ seq 1 3 10    #从1开始，到10 间隔为3 结果是：1 4 7 10
@@ -55,6 +55,13 @@ $ echo ${a[1]}
 4
 $ echo ${a[@]}
 1 4 7 10
+```
+
+# 5.获得脚本的绝对路径
+
+```shell
+basepath=$(cd `dirname $0`; pwd) #dirname $0，取得当前执行的脚本文件的父目录
+echo $basepath
 ```
 
 

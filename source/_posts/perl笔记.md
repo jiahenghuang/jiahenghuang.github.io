@@ -38,3 +38,37 @@ print "\t", $account{"owners"}->[1]->{"name"}, " (born ", $account{"owners"}->[1
 ```
 
 参见[两个半小时学会Perl](https://qntm.org/files/perl/perl_cn.html)
+
+# 2.perl调试
+
+```shell
+$ perl -d test.pl
+```
+
+调试命令：
+
+- n: 执行下一步
+- b  linenum: 在某一行添加断点
+- B linenum: 删除某行的断点
+- l: 列出执行到所在行附近的代码
+- L: 查看设置的断点
+
+## 2.1让perl调试能够使用退格键+方向键
+
+从CPAN上下载并安装perl模块`Term::ReadLine::Gnu`即可
+
+参考：[Perl debug and backspace](https://blog.csdn.net/Braveo/article/details/2849901)
+
+# 3.获取当前脚本的绝对路径
+
+```perl
+#!/usr/bin/perl -w 
+use File::Basename;
+use Cwd 'abs_path';
+use strict;
+
+my $bin = undef;
+$bin = dirname(abs_path($0));
+print $bin."\n";
+```
+

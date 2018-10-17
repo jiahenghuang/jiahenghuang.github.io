@@ -93,3 +93,14 @@ git的常用命令
    $ git stash #保存当前工作进度，会把暂存区和工作区的改动保存起来。
    $ git stash pop #恢复最新的进度到工作区。git默认会把工作区和暂存区的改动都恢复到工作区。
    ```
+
+5. git push遇到push.default警告的问题
+
+   ```shell
+   git config --global push.default matching #当 push.default 的值设置成 ‘matching’ ，git 将会推送所有本地已存在的同名分支到远程仓库
+   git config --global push.default simple #从 Git 2.0 开始，git 采用更加保守的值'simple'，只会推送当前分支到相应的远程仓库，'git pull' 也将只更新当前
+   ```
+
+   最好是用采用第二种方法，只推送当前分支。
+
+   参见：[Git 2.x 中git push时遇到 push.default 警告的解决方法](https://www.jianshu.com/p/e26175b2e916)
