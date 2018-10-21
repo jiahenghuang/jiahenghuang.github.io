@@ -13,15 +13,21 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 ### Create a new post
 
 ``` bash
-$ hexo new "My New Post"
+$ hexo new "My New Post" # 新建文章
 ```
 
 More info: [Writing](https://hexo.io/docs/writing.html)
 
+# write a post
+
+```shell
+$ typora postname.md & #在博客文章目录下面用typora编辑器打开
+```
+
 ### Run server
 
 ``` bash
-$ hexo server
+$ hexo clean && hexo s -g #本地调试
 ```
 
 More info: [Server](https://hexo.io/docs/server.html)
@@ -37,7 +43,7 @@ More info: [Generating](https://hexo.io/docs/generating.html)
 ### Deploy to remote sites
 
 ``` bash
-$ hexo deploy
+$ hexo clean && hexo d -g # 部署到远程仓库
 ```
 
 ### test for mathjax support

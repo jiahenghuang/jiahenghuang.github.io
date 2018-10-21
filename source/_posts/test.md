@@ -1,7 +1,7 @@
 ---
 title: markdown笔记
 comments: true
-mathjax: false
+mathjax: true
 date: 2018-10-21 17:13:31
 tags:
 - notes
@@ -13,7 +13,9 @@ categories: markdown
 
 ## 二级标题
 
-​	这是我的第一篇文章，
+​	这是我的第一篇文章
+
+<!--more-->
 
 ## 有序列表
 
