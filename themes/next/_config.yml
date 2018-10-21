@@ -127,9 +127,9 @@ scheme: Gemini
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  GitHub: https://github.com/LjessonS || github
+  GitHub: https://github.com/jiahenghuang || github
   zhihu: https://www.zhihu.com/
-  E-Mail: mailto:ltww2274@foxmail.com || envelope
+  E-Mail: mailto:huangjiaheng0901@163.com || envelope
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -150,8 +150,7 @@ links_title: 友链
 links_layout: block
 # links_layout: inline
 links:
-   阿直: https://azhizhizhizhizhi.github.io/
-   jd: http://algoers.com:10249/notebooks/algoers_port_detail.ipynb
+   ls: https://ljessons.github.io/
   # hexo: https://hexo.io/zh-cn/docs
   # nexT: http://theme-next.iissnan.com/
   # Github: https://github.com/LjessonS
@@ -160,7 +159,7 @@ links:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
-avatar: /images/totoro.jpg
+avatar: /images/ml.jpg
 # Table Of Contents in the Sidebar
 toc:
   enable: true
@@ -383,9 +382,9 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
 valine:
-  enable: true
-  appid: mlefV5ljM2rUwLDjsI3f3mcU-gzGzoHsz # your leancloud application appid
-  appkey: v23KN90gxd76NXe8NuHmmKeo # your leancloud application appkey
+  enable: false
+  appid:  # your leancloud application appid
+  appkey:  # your leancloud application appkey
   notify: true # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: Just go go # comment box placeholder
@@ -412,10 +411,10 @@ gitment:
   lazy: false # Comments lazy loading with a button
   cleanly: true # Hide 'Powered by ...' on footer, and more
   language: # Force language, or auto switch by theme
-  github_user: LjessonS # MUST HAVE, Your Github ID
-  github_repo: pi-comment # MUST HAVE, The repo you use to store Gitment comments
-  client_id: eb7102f3b70e56896d6d # MUST HAVE, Github client id for the Gitment
-  client_secret: 0a4cb27fc5c6cbeb7e1293fdaf67e796e93ac6a8 # EITHER this or proxy_gateway, Github access secret token for the Gitment
+  github_user: # MUST HAVE, Your Github ID
+  github_repo:  # MUST HAVE, The repo you use to store Gitment comments
+  client_id: # MUST HAVE, Github client id for the Gitment
+  client_secret: # EITHER this or proxy_gateway, Github access secret token for the Gitment
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
 
@@ -536,9 +535,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: true
-  app_id: jaN0A0y6TTRaUve6RavFvbJY-gzGzoHsz
-  app_key: oijC1KG31hGf53zNczXI8xib
+  enable: false #_m_
+  app_id: 
+  app_key: 
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId

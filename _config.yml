@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: jesson's space
+title: jiaheng's space
 subtitle:
-description: 不积跬步无以至千里
+description: 
 keywords:
-author: LjessonS
+author: jiaheng
 language: zh-Hans
 timezone:
 sitemap:
@@ -17,9 +17,7 @@ sitemap:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-#url: https://LjessonS.github.io
-#url: http://192.168.0.103
-url: http://algoers.com:10244/
+url: https://jiahenghuang.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults: 
@@ -108,6 +106,4 @@ theme: next
 deploy:
   type: git
   repo:
-      aliyun: ls@algoers.com:/home/ls/blog/hexo.git,master  
-      pi: ssh://git@algoers.com:10247/home/git/blog/hexo.git,master
-      github: git@github.com:LjessonS/LjessonS.github.io.git,master  
+      github: git@github.com:jiahenghuang/jiahenghuang.github.io.git,master  
